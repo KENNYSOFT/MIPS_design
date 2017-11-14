@@ -77,8 +77,8 @@ module controller(input  [5:0] op, funct,
                   output       regdst, regwrite,
                   output       jump,
 // ###### Hyeonmin Park: Start ######
-						output       pctoreg, regtopc,
-						output [3:0] alucontrol);
+                  output       pctoreg, regtopc,
+                  output [3:0] alucontrol);
 // ###### Hyeonmin Park: End ######
 
   wire [1:0] aluop;
@@ -125,29 +125,31 @@ module maindec(input  [5:0] op,
 // ###### Hyeonmin Park: End ######
                output [1:0] aluop);
 
+// ###### Hyeonmin Park: Start ######
   reg [11:0] controls;
+// ###### Hyeonmin Park: End ######
 
   assign {signext, shiftl16, regwrite, regdst, alusrc, branch, memwrite,
+// ###### Hyeonmin Park: Start ######
           memtoreg, jump, pctoreg, aluop} = controls;
+// ###### Hyeonmin Park: End ######
 
   always @(*)
     case(op)
+// ###### Hyeonmin Park: Start ######
       6'b000000: controls <= #`mydelay 12'b001100000011; // Rtype
       6'b100011: controls <= #`mydelay 12'b101010010000; // LW
       6'b101011: controls <= #`mydelay 12'b100010100000; // SW
       6'b000100: controls <= #`mydelay 12'b100001000001; // BEQ
-// ###### Hyeonmin Park: Start ######
 		6'b000101: controls <= #`mydelay 12'b100001000001; // BNE: only difference is PCSrc
-// ###### Hyeonmin Park: End ######
       6'b001000, 
       6'b001001: controls <= #`mydelay 12'b101010000000; // ADDI, ADDIU: only difference is exception
       6'b001101: controls <= #`mydelay 12'b001010000010; // ORI
       6'b001111: controls <= #`mydelay 12'b011010000000; // LUI
       6'b000010: controls <= #`mydelay 12'b000000001000; // J
-// ###### Hyeonmin Park: Start ######
 		6'b000011: controls <= #`mydelay 12'b001000001100; // JAL
-// ###### Hyeonmin Park: End ######
       default:   controls <= #`mydelay 12'bxxxxxxxxxxxx; // ???
+// ###### Hyeonmin Park: End ######
     endcase
 
 endmodule
@@ -165,8 +167,7 @@ module aludec(input      [5:0] funct,
       2'b10: alucontrol <= #`mydelay 4'b0001;  // or
       default: case(funct)          // RTYPE
 // ###### Hyeonmin Park: Start ######
-		    6'b000100: alucontrol <= #`mydelay 4'b0010; // JR
-// ###### Hyeonmin Park: End ######
+          6'b000100: alucontrol <= #`mydelay 4'b0010; // JR
           6'b100000,
           6'b100001: alucontrol <= #`mydelay 4'b0010; // ADD, ADDU: only difference is exception
           6'b100010,
@@ -174,10 +175,9 @@ module aludec(input      [5:0] funct,
           6'b100100: alucontrol <= #`mydelay 4'b0000; // AND
           6'b100101: alucontrol <= #`mydelay 4'b0001; // OR
           6'b101010: alucontrol <= #`mydelay 4'b0111; // SLT
-// ###### Hyeonmin Park: Start ######
-			 6'b101011: alucontrol <= #`mydelay 4'b1111; // SLTU
-// ###### Hyeonmin Park: End ######
+          6'b101011: alucontrol <= #`mydelay 4'b1111; // SLTU
           default:   alucontrol <= #`mydelay 4'bxxxx; // ???
+// ###### Hyeonmin Park: End ######
         endcase
     endcase
     
@@ -190,7 +190,7 @@ module datapath(input         clk, reset,
                 input         alusrc, regdst,
                 input         regwrite, jump,
 // ###### Hyeonmin Park: Start ######
-					 input         pctoreg, regtopc,
+                input         pctoreg, regtopc,
                 input  [3:0]  alucontrol,
 // ###### Hyeonmin Park: End ######
                 output        zero,
@@ -245,9 +245,9 @@ module datapath(input         clk, reset,
 // ###### Hyeonmin Park: Start ######
   mux2 #(32) pcjrmux(
     .d0  (pcnextbr),
-	 .d1  (srca),
-	 .s   (regtopc),
-	 .y   (pcnextjr));
+    .d1  (srca),
+    .s   (regtopc),
+    .y   (pcnextjr));
 // ###### Hyeonmin Park: End ######
 
   mux2 #(32) pcmux(
@@ -294,9 +294,9 @@ module datapath(input         clk, reset,
 // ###### Hyeonmin Park: Start ######
   mux2 #(32) resmux2(
     .d0 (result),
-	 .d1 (pcplus4),
-	 .s  (pctoreg),
-	 .y  (result2));
+    .d1 (pcplus4),
+    .s  (pctoreg),
+    .y  (result2));
 // ###### Hyeonmin Park: End ######
 
   sign_zero_ext sze(

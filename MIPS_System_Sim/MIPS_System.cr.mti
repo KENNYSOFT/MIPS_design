@@ -1,0 +1,85 @@
+C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_CPU/mips.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_CPU/mips.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module mips
+-- Compiling module controller
+-- Compiling module maindec
+-- Compiling module aludec
+-- Compiling module datapath
+
+Top level modules:
+	mips
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Alera_Mem_Dual_Port/ram2port_inst_data.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Alera_Mem_Dual_Port/ram2port_inst_data.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module ram2port_inst_data
+
+Top level modules:
+	ram2port_inst_data
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_System.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_System.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module MIPS_System
+
+Top level modules:
+	MIPS_System
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module TimerCounter
+
+Top level modules:
+	TimerCounter
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/GPIO/GPIO.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/GPIO/GPIO.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module GPIO
+-- Compiling module pulse_gen
+
+Top level modules:
+	GPIO
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Decoder/Addr_Decoder.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Decoder/Addr_Decoder.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module Addr_Decoder
+
+Top level modules:
+	Addr_Decoder
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_System_tb.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_System_tb.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module MIPS_System_tb
+
+Top level modules:
+	MIPS_System_tb
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_CPU/mipsparts.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/MIPS_CPU/mipsparts.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module regfile
+-- Compiling module alu
+-- Compiling module adder
+-- Compiling module sl2
+-- Compiling module sign_zero_ext
+-- Compiling module shift_left_16
+-- Compiling module flopr
+-- Compiling module flopenr
+-- Compiling module mux2
+
+Top level modules:
+	regfile
+	alu
+	adder
+	sl2
+	sign_zero_ext
+	shift_left_16
+	flopr
+	flopenr
+	mux2
+
+} {} {}} C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Altera_PLL/ALTPLL_clkgen.v {1 {vlog -work work -nocovercells C:/Users/esca/Desktop/Sunhee/comparch/term/MIPS_design/MIPS_System/Altera_PLL/ALTPLL_clkgen.v
+Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+-- Compiling module ALTPLL_clkgen
+
+Top level modules:
+	ALTPLL_clkgen
+
+} {} {}}

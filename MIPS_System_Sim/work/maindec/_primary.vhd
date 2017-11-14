@@ -12,6 +12,7 @@ entity maindec is
         regdst          : out    vl_logic;
         regwrite        : out    vl_logic;
         jump            : out    vl_logic;
+        pctoreg         : out    vl_logic;
         aluop           : out    vl_logic_vector(1 downto 0)
     );
 end maindec;

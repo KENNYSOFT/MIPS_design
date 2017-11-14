@@ -14,6 +14,8 @@ entity controller is
         regdst          : out    vl_logic;
         regwrite        : out    vl_logic;
         jump            : out    vl_logic;
-        alucontrol      : out    vl_logic_vector(2 downto 0)
+        pctoreg         : out    vl_logic;
+        regtopc         : out    vl_logic;
+        alucontrol      : out    vl_logic_vector(3 downto 0)
     );
 end controller;

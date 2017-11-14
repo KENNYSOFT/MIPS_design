@@ -12,7 +12,9 @@ entity datapath is
         regdst          : in     vl_logic;
         regwrite        : in     vl_logic;
         jump            : in     vl_logic;
-        alucontrol      : in     vl_logic_vector(2 downto 0);
+        pctoreg         : in     vl_logic;
+        regtopc         : in     vl_logic;
+        alucontrol      : in     vl_logic_vector(3 downto 0);
         zero            : out    vl_logic;
         pc              : out    vl_logic_vector(31 downto 0);
         instr           : in     vl_logic_vector(31 downto 0);

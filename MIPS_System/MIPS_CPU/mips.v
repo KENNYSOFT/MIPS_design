@@ -19,6 +19,9 @@ module mips(input         clk, reset,
   wire        signext, shiftl16, memtoreg, branch;
   wire        pcsrc, zero;
   wire        alusrc, regdst, regwrite, jump;
+// ###### Hyeonmin Park: Start ######
+  wire        pctoreg, regtopc;
+// ###### Hyeonmin Park: End ######
   wire [2:0]  alucontrol;
 
   // Instantiate Controller
@@ -35,6 +38,10 @@ module mips(input         clk, reset,
 		.regdst     (regdst),
 		.regwrite   (regwrite),
 		.jump       (jump),
+// ###### Hyeonmin Park: Start ######
+		.pctoreg    (pctoreg),
+		.regtopc    (regtopc),
+// ###### Hyeonmin Park: End ######
 		.alucontrol (alucontrol));
 
   // Instantiate Datapath
@@ -49,6 +56,8 @@ module mips(input         clk, reset,
     .regdst     (regdst),
     .regwrite   (regwrite),
     .jump       (jump),
+	 .pctoreg    (pctoreg),
+	 .regtopc    (regtopc),
     .alucontrol (alucontrol),
     .zero       (zero),
     .pc         (pc),
@@ -67,6 +76,9 @@ module controller(input  [5:0] op, funct,
                   output       pcsrc, alusrc,
                   output       regdst, regwrite,
                   output       jump,
+// ###### Hyeonmin Park: Start ######
+						output       pctoreg, regtopc,
+// ###### Hyeonmin Park: End ######
                   output [2:0] alucontrol);
 
   wire [1:0] aluop;
@@ -83,6 +95,9 @@ module controller(input  [5:0] op, funct,
     .regdst   (regdst),
     .regwrite (regwrite),
     .jump     (jump),
+// ###### Hyeonmin Park: Start ######
+	 .pctoreg  (pctoreg),
+// ###### Hyeonmin Park: End ######
     .aluop    (aluop));
 
   aludec ad( 
@@ -90,7 +105,10 @@ module controller(input  [5:0] op, funct,
     .aluop      (aluop), 
     .alucontrol (alucontrol));
 
-  assign pcsrc = branch & zero;
+// ###### Hyeonmin Park: Start ######
+  assign pcsrc = branch & (op == 6'b000100 ? zero : ~zero);
+  assign regtopc = (op == 6'b000000 && funct == 6'b001000);
+// ###### Hyeonmin Park: End ######
 
 endmodule
 
@@ -102,25 +120,34 @@ module maindec(input  [5:0] op,
                output       branch, alusrc,
                output       regdst, regwrite,
                output       jump,
+// ###### Hyeonmin Park: Start ######
+					output       pctoreg,
+// ###### Hyeonmin Park: End ######
                output [1:0] aluop);
 
-  reg [10:0] controls;
+  reg [11:0] controls;
 
   assign {signext, shiftl16, regwrite, regdst, alusrc, branch, memwrite,
-          memtoreg, jump, aluop} = controls;
+          memtoreg, jump, pctoreg, aluop} = controls;
 
   always @(*)
     case(op)
-      6'b000000: controls <= #`mydelay 11'b00110000011; // Rtype
-      6'b100011: controls <= #`mydelay 11'b10101001000; // LW
-      6'b101011: controls <= #`mydelay 11'b10001010000; // SW
-      6'b000100: controls <= #`mydelay 11'b10000100001; // BEQ
+      6'b000000: controls <= #`mydelay 12'b001100000011; // Rtype
+      6'b100011: controls <= #`mydelay 12'b101010010000; // LW
+      6'b101011: controls <= #`mydelay 12'b100010100000; // SW
+      6'b000100: controls <= #`mydelay 12'b100001000001; // BEQ
+// ###### Hyeonmin Park: Start ######
+		6'b000101: controls <= #`mydelay 12'b100001000001; // BNE: only difference is PCSrc
+// ###### Hyeonmin Park: End ######
       6'b001000, 
-      6'b001001: controls <= #`mydelay 11'b10101000000; // ADDI, ADDIU: only difference is exception
-      6'b001101: controls <= #`mydelay 11'b00101000010; // ORI
-      6'b001111: controls <= #`mydelay 11'b01101000000; // LUI
-      6'b000010: controls <= #`mydelay 11'b00000000100; // J
-      default:   controls <= #`mydelay 11'bxxxxxxxxxxx; // ???
+      6'b001001: controls <= #`mydelay 12'b101010000000; // ADDI, ADDIU: only difference is exception
+      6'b001101: controls <= #`mydelay 12'b001010000010; // ORI
+      6'b001111: controls <= #`mydelay 12'b011010000000; // LUI
+      6'b000010: controls <= #`mydelay 12'b000000001000; // J
+// ###### Hyeonmin Park: Start ######
+		6'b000011: controls <= #`mydelay 12'b001000001100; // JAL
+// ###### Hyeonmin Park: End ######
+      default:   controls <= #`mydelay 12'bxxxxxxxxxxxx; // ???
     endcase
 
 endmodule
@@ -135,6 +162,9 @@ module aludec(input      [5:0] funct,
       2'b01: alucontrol <= #`mydelay 3'b110;  // sub
       2'b10: alucontrol <= #`mydelay 3'b001;  // or
       default: case(funct)          // RTYPE
+// ###### Hyeonmin Park: Start ######
+		    6'b000100: alucontrol <= #`mydelay 3'b010; // JR
+// ###### Hyeonmin Park: End ######
           6'b100000,
           6'b100001: alucontrol <= #`mydelay 3'b010; // ADD, ADDU: only difference is exception
           6'b100010,
@@ -142,6 +172,9 @@ module aludec(input      [5:0] funct,
           6'b100100: alucontrol <= #`mydelay 3'b000; // AND
           6'b100101: alucontrol <= #`mydelay 3'b001; // OR
           6'b101010: alucontrol <= #`mydelay 3'b111; // SLT
+// ###### Hyeonmin Park: Start ######
+			 6'b101011: alucontrol <= #`mydelay 3'b111; // SLTU
+// ###### Hyeonmin Park: End ######
           default:   alucontrol <= #`mydelay 3'bxxx; // ???
         endcase
     endcase
@@ -154,6 +187,9 @@ module datapath(input         clk, reset,
                 input         memtoreg, pcsrc,
                 input         alusrc, regdst,
                 input         regwrite, jump,
+// ###### Hyeonmin Park: Start ######
+					 input         pctoreg, regtopc,
+// ###### Hyeonmin Park: End ######
                 input  [2:0]  alucontrol,
                 output        zero,
                 output [31:0] pc,
@@ -162,10 +198,19 @@ module datapath(input         clk, reset,
                 input  [31:0] readdata);
 
   wire [4:0]  writereg;
+// ###### Hyeonmin Park: Start ######
+  wire [4:0]  writereg2;
+// ###### Hyeonmin Park: End ######
   wire [31:0] pcnext, pcnextbr, pcplus4, pcbranch;
+// ###### Hyeonmin Park: Start ######
+  wire [31:0] pcnextjr;
+// ###### Hyeonmin Park: End ######
   wire [31:0] signimm, signimmsh, shiftedimm;
   wire [31:0] srca, srcb;
   wire [31:0] result;
+// ###### Hyeonmin Park: Start ######
+  wire [31:0] result2;
+// ###### Hyeonmin Park: End ######
   wire        shift;
 
   // next PC logic
@@ -195,8 +240,18 @@ module datapath(input         clk, reset,
     .s   (pcsrc),
     .y   (pcnextbr));
 
+// ###### Hyeonmin Park: Start ######
+  mux2 #(32) pcjrmux(
+    .d0  (pcnextbr),
+	 .d1  (srca),
+	 .s   (regtopc),
+	 .y   (pcnextjr));
+// ###### Hyeonmin Park: End ######
+
   mux2 #(32) pcmux(
-    .d0   (pcnextbr),
+// ###### Hyeonmin Park: Start ######
+    .d0   (pcnextjr),
+// ###### Hyeonmin Park: End ######
     .d1   ({pcplus4[31:28], instr[25:0], 2'b00}),
     .s    (jump),
     .y    (pcnext));
@@ -207,8 +262,10 @@ module datapath(input         clk, reset,
     .we      (regwrite),
     .ra1     (instr[25:21]),
     .ra2     (instr[20:16]),
-    .wa      (writereg),
-    .wd      (result),
+// ###### Hyeonmin Park: Start ######
+    .wa      (writereg2),
+    .wd      (result2),
+// ###### Hyeonmin Park: End ######
     .rd1     (srca),
     .rd2     (writedata));
 
@@ -218,11 +275,27 @@ module datapath(input         clk, reset,
     .s   (regdst),
     .y   (writereg));
 
+// ###### Hyeonmin Park: Start ######
+  mux2 #(5) wrmux2(
+    .d0  (writereg),
+	 .d1  (5'b11111),
+	 .s   (pctoreg),
+	 .y   (writereg2));
+// ###### Hyeonmin Park: End ######
+
   mux2 #(32) resmux(
     .d0 (aluout),
     .d1 (readdata),
     .s  (memtoreg),
     .y  (result));
+
+// ###### Hyeonmin Park: Start ######
+  mux2 #(32) resmux2(
+    .d0 (result),
+	 .d1 (pcplus4),
+	 .s  (pctoreg),
+	 .y  (result2));
+// ###### Hyeonmin Park: End ######
 
   sign_zero_ext sze(
     .a       (instr[15:0]),

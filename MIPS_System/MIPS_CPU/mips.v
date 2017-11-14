@@ -21,8 +21,8 @@ module mips(input         clk, reset,
   wire        alusrc, regdst, regwrite, jump;
 // ###### Hyeonmin Park: Start ######
   wire        pctoreg, regtopc;
+  wire [3:0]  alucontrol;
 // ###### Hyeonmin Park: End ######
-  wire [2:0]  alucontrol;
 
   // Instantiate Controller
   controller c(
@@ -78,8 +78,8 @@ module controller(input  [5:0] op, funct,
                   output       jump,
 // ###### Hyeonmin Park: Start ######
 						output       pctoreg, regtopc,
+						output [3:0] alucontrol);
 // ###### Hyeonmin Park: End ######
-                  output [2:0] alucontrol);
 
   wire [1:0] aluop;
   wire       branch;
@@ -154,28 +154,30 @@ endmodule
 
 module aludec(input      [5:0] funct,
               input      [1:0] aluop,
-              output reg [2:0] alucontrol);
+// ###### Hyeonmin Park: Start ######
+              output reg [3:0] alucontrol);
+// ###### Hyeonmin Park: End ######
 
   always @(*)
     case(aluop)
-      2'b00: alucontrol <= #`mydelay 3'b010;  // add
-      2'b01: alucontrol <= #`mydelay 3'b110;  // sub
-      2'b10: alucontrol <= #`mydelay 3'b001;  // or
+      2'b00: alucontrol <= #`mydelay 4'b0010;  // add
+      2'b01: alucontrol <= #`mydelay 4'b0110;  // sub
+      2'b10: alucontrol <= #`mydelay 4'b0001;  // or
       default: case(funct)          // RTYPE
 // ###### Hyeonmin Park: Start ######
-		    6'b000100: alucontrol <= #`mydelay 3'b010; // JR
+		    6'b000100: alucontrol <= #`mydelay 4'b0010; // JR
 // ###### Hyeonmin Park: End ######
           6'b100000,
-          6'b100001: alucontrol <= #`mydelay 3'b010; // ADD, ADDU: only difference is exception
+          6'b100001: alucontrol <= #`mydelay 4'b0010; // ADD, ADDU: only difference is exception
           6'b100010,
-          6'b100011: alucontrol <= #`mydelay 3'b110; // SUB, SUBU: only difference is exception
-          6'b100100: alucontrol <= #`mydelay 3'b000; // AND
-          6'b100101: alucontrol <= #`mydelay 3'b001; // OR
-          6'b101010: alucontrol <= #`mydelay 3'b111; // SLT
+          6'b100011: alucontrol <= #`mydelay 4'b0110; // SUB, SUBU: only difference is exception
+          6'b100100: alucontrol <= #`mydelay 4'b0000; // AND
+          6'b100101: alucontrol <= #`mydelay 4'b0001; // OR
+          6'b101010: alucontrol <= #`mydelay 4'b0111; // SLT
 // ###### Hyeonmin Park: Start ######
-			 6'b101011: alucontrol <= #`mydelay 3'b111; // SLTU
+			 6'b101011: alucontrol <= #`mydelay 4'b1111; // SLTU
 // ###### Hyeonmin Park: End ######
-          default:   alucontrol <= #`mydelay 3'bxxx; // ???
+          default:   alucontrol <= #`mydelay 4'bxxxx; // ???
         endcase
     endcase
     
@@ -189,8 +191,8 @@ module datapath(input         clk, reset,
                 input         regwrite, jump,
 // ###### Hyeonmin Park: Start ######
 					 input         pctoreg, regtopc,
+                input  [3:0]  alucontrol,
 // ###### Hyeonmin Park: End ######
-                input  [2:0]  alucontrol,
                 output        zero,
                 output [31:0] pc,
                 input  [31:0] instr,

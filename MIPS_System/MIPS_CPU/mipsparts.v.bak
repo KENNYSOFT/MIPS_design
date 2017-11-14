@@ -193,32 +193,22 @@ endmodule
 
 
 module alu(input      [31:0] a, b, 
-           input      [3:0]  alucont, 
+           input      [2:0]  alucont, 
            output reg [31:0] result,
            output            zero);
 
-  wire [31:0] b2, slt;
-// ###### Hyeonmin Park: Start ######
-  wire [32:0] sum;
-  wire [31:0] sltu;
-// ###### Hyeonmin Park: End ######
+  wire [31:0] b2, sum, slt;
 
   assign b2 = alucont[2] ? ~b:b; 
   assign sum = a + b2 + alucont[2];
   assign slt = sum[31];
-// ###### Hyeonmin Park: Start ######
-  assign sltu = !sum[32];
-// ###### Hyeonmin Park: End ######
 
   always@(*)
-    case({alucont[3],alucont[1:0]})
-      3'b000: result <= #`mydelay a & b;
-      3'b001: result <= #`mydelay a | b;
-      3'b010: result <= #`mydelay sum;
-      3'b011: result <= #`mydelay slt;
-// ###### Hyeonmin Park: Start ######		
-		3'b111: result <= #`mydelay sltu;
-// ###### Hyeonmin Park: End ######
+    case(alucont[1:0])
+      2'b00: result <= #`mydelay a & b;
+      2'b01: result <= #`mydelay a | b;
+      2'b10: result <= #`mydelay sum;
+      2'b11: result <= #`mydelay slt;
     endcase
 
   assign #`mydelay zero = (result == 32'b0);

@@ -15,9 +15,19 @@ entity datapath is
         pctoreg         : in     vl_logic;
         regtopc         : in     vl_logic;
         alucontrol      : in     vl_logic_vector(3 downto 0);
+        fwda            : in     vl_logic_vector(2 downto 0);
+        fwdb            : in     vl_logic_vector(2 downto 0);
+        hazard          : in     vl_logic;
         zero            : out    vl_logic;
         pc              : out    vl_logic_vector(31 downto 0);
         instr           : in     vl_logic_vector(31 downto 0);
+        ID_instr        : out    vl_logic_vector(31 downto 0);
+        ID_rs           : out    vl_logic_vector(4 downto 0);
+        ID_rt           : out    vl_logic_vector(4 downto 0);
+        EX_rs           : out    vl_logic_vector(4 downto 0);
+        EX_rt           : out    vl_logic_vector(4 downto 0);
+        MEM_writereg    : out    vl_logic_vector(4 downto 0);
+        WB_writereg     : out    vl_logic_vector(4 downto 0);
         aluout          : out    vl_logic_vector(31 downto 0);
         writedata       : out    vl_logic_vector(31 downto 0);
         readdata        : in     vl_logic_vector(31 downto 0)

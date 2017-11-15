@@ -6,8 +6,10 @@ entity maindec is
         signext         : out    vl_logic;
         shiftl16        : out    vl_logic;
         memtoreg        : out    vl_logic;
+        memread         : out    vl_logic;
         memwrite        : out    vl_logic;
         branch          : out    vl_logic;
+        branchn         : out    vl_logic;
         alusrc          : out    vl_logic;
         regdst          : out    vl_logic;
         regwrite        : out    vl_logic;

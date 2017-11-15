@@ -2,169 +2,169 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -7.448
+TNS   : -185.029
+
 Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -18.207
-TNS   : -16383.462
-
-Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : -11.767
-TNS   : -280.723
-
-Type  : Slow 1200mV 85C Model Setup 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -8.723
-TNS   : -248.809
+Slack : -5.806
+TNS   : -146.935
 
 Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 20.108
+Slack : 21.299
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -4.668
-TNS   : -125.094
+Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 41.525
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -2.271
+TNS   : -26.575
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.358
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 4.967
+Slack : 50.251
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.445
+Slack : 75.452
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 95.613
+Slack : 96.458
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.105
+Slack : 2.609
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -1.443
-TNS   : -318.144
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : 0.264
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : 9.740
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 49.736
+Slack : 49.735
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 49.747
+Slack : 49.746
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.753
+Slack : 49.754
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -6.902
+TNS   : -171.070
 
 Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -16.118
-TNS   : -14579.609
-
-Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : -10.388
-TNS   : -247.805
-
-Type  : Slow 1200mV 0C Model Setup 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -7.933
-TNS   : -228.220
+Slack : -5.014
+TNS   : -124.609
 
 Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 20.604
+Slack : 21.674
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -4.009
-TNS   : -107.770
+Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 42.291
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -1.913
+TNS   : -19.340
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.312
+Slack : 0.160
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 4.396
+Slack : 50.258
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.423
+Slack : 75.436
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 96.078
+Slack : 96.855
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.924
+Slack : 2.347
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -1.181
-TNS   : -273.945
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : 0.291
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : 9.713
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[1]'
 Slack : 49.741
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 49.742
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 49.745
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[2]'
 Slack : 49.749
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -4.052
+TNS   : -98.620
+
 Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -10.559
-TNS   : -9231.022
-
-Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : -6.399
-TNS   : -152.495
-
-Type  : Fast 1200mV 0C Model Setup 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -4.973
-TNS   : -141.301
+Slack : -2.981
+TNS   : -74.439
 
 Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 21.888
+Slack : 22.696
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -2.720
-TNS   : -73.969
+Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 45.071
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -1.537
+TNS   : -23.306
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.187
+Slack : 0.090
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 2.639
+Slack : 50.109
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.221
+Slack : 75.217
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 97.269
+Slack : 97.892
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.170
+Slack : 1.497
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -0.755
-TNS   : -128.994
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : 0.311
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : 9.425
@@ -179,7 +179,7 @@ Slack : 49.751
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.776
+Slack : 49.780
 TNS   : 0.000
 
 ------------------------------------------------------------

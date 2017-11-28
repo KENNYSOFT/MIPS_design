@@ -23,7 +23,6 @@ Z13 !s100 3Cbe=`A_RVPVC`42AFl<42
 !s85 0
 !s101 -O0
 vadder
-!i10b 1
 Z14 !s100 ]@Z:aBidlc_kX?f8K8Pg41
 Z15 I2^D6@>dg^YllThKJT?Rm]3
 Z16 VR4:XbIkd<X908neF9?e9K1
@@ -34,13 +33,14 @@ Z20 FC:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mipsparts.v
 Z21 L0 229
 R2
 r1
-!s85 0
 31
 Z22 !s108 1510666035.718000
 Z23 !s107 C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mipsparts.v|
 Z24 !s90 -reportprogress|30|-work|work|C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mipsparts.v|
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vAddr_Decoder
 Z25 VYZUiY@2bCD3RmSiD^JG2z0
 R2
@@ -731,7 +731,6 @@ Z183 !s100 6LAI3HJV`_ANDOeWc;WD=2
 !s85 0
 !s101 -O0
 valu
-!i10b 1
 Z184 !s100 WSP6Hiz2@FfE8W[@J9f<20
 Z185 II9n>YgE:ULW4NbF]=znl[3
 Z186 VQm7gl53P[EXM8L2F:CEVP1
@@ -742,32 +741,33 @@ R20
 Z187 L0 195
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
-R12
-valudec
-Z188 Ij@K:nZ0U]z`kV=YgLBj6j1
-Z189 VZll@ogDeZbBkcLPo`z5XN2
-R17
-Z190 w1510665576
-Z191 8C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v
-Z192 FC:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v
-Z193 L0 157
-R2
-r1
-31
-Z194 !s108 1510666035.446000
-Z195 !s107 C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v|
-Z196 !s90 -reportprogress|300|-work|work|C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v|
 R12
 !i10b 1
-Z197 !s100 ^18P4XgKW98QF1dl=e]Od2
 !s85 0
 !s101 -O0
+valudec
+!i10b 1
+Z188 !s100 e:z=K5EN=9<4@>h[Kkg0G3
+Z189 Ic>3j@ihcH9[dmcf1VRc_Z2
+Z190 VlJ8Cz`ZozX:RdmDn0V1<d0
+R17
+Z191 w1511865549
+Z192 8C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v
+Z193 FC:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v
+Z194 L0 161
+R2
+r1
+!s85 0
+31
+Z195 !s108 1511865553.815000
+Z196 !s107 C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v|
+Z197 !s90 -reportprogress|300|-work|work|C:/Users/525hm/Desktop/MIPS_design/MIPS_System/MIPS_CPU/mips.v|
+!s101 -O0
+R12
 varm_m_cntr
 Z198 VnZ7bTfk5X@6QmGaNoIOHO1
 R2
@@ -883,24 +883,24 @@ Z221 !s100 4IYX:kd8X37Ao0??lCoVz0
 !s85 0
 !s101 -O0
 vcontroller
-Z222 !s100 XYGUjHRkX1^eAd9bjn8cI1
-Z223 I>]OIAV_42AjfMSU>lEVIJ0
+!i10b 1
+Z222 !s100 h01lf?@8b]UN_=XVWQiEF3
+Z223 IFG3oFV8?MEV=>3[:3V?8K0
 Z224 VH7AB]]6jhGRJoeD934UQL2
 R17
-R190
 R191
 R192
+R193
 L0 71
 R2
 r1
+!s85 0
 31
-R194
 R195
 R196
-R12
-!i10b 1
-!s85 0
+R197
 !s101 -O0
+R12
 vcycloneiiigl_post_divider
 Z225 VE[DCIBKzdZ_5J1e=a>ciB3
 R2
@@ -921,24 +921,24 @@ Z228 !s100 oM6SDmEI:Kb0>54R]P0N91
 !s85 0
 !s101 -O0
 vdatapath
-Z229 !s100 QV9VMJT?<>SehGnN_j8QS1
-Z230 I9<hP2@bL7?T?5hXaohEmB1
+!i10b 1
+Z229 !s100 E:<T8DfGNdZYQzL8HdHic3
+Z230 ID`:_MVY^:[V8`D[VkmL?K0
 Z231 ViK_mIXcb7=CQF]=668U4c2
 R17
-R190
 R191
 R192
-Z232 L0 186
+R193
+Z232 L0 194
 R2
 r1
+!s85 0
 31
-R194
 R195
 R196
-R12
-!i10b 1
-!s85 0
+R197
 !s101 -O0
+R12
 vdcfifo
 Z233 VBelBX1OQY@SOTCS?5IFj@1
 R2
@@ -1149,7 +1149,6 @@ Z276 !s100 WX@?5M=E4`QI9C]i3ib6N1
 !s85 0
 !s101 -O0
 vflopenr
-!i10b 1
 Z277 !s100 ;i43RVSbR<@fDA4gb6=4O2
 Z278 IE7BSaU^b3KllHb<c9AOHd3
 Z279 Vl[@31Ka9Wak9oGo?2I58:3
@@ -1160,15 +1159,15 @@ R20
 Z280 L0 287
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
-vflopr
 !i10b 1
+!s85 0
+!s101 -O0
+vflopr
 Z281 !s100 E7>H92DlL<oFdeI^hgFXk1
 Z282 I_m8HU1nS3jn_2GbNJ[U>V2
 Z283 VKfe>keNPnLBlHh<KCg1o52
@@ -1179,13 +1178,14 @@ R20
 Z284 L0 274
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vGPIO
 Z285 VAT1XQY_W6_M^VLzzD2Q3_3
 R2
@@ -1875,363 +1875,362 @@ Z441 !s100 @cTkCjmWWi=KdzlaPdDkB1
 !s85 0
 !s101 -O0
 vmaindec
-Z442 I;X5hJOdF>mM@hC0mJkkU22
-Z443 Vf?ndYeG]CS7AK2LCaGkT^3
+!i10b 1
+!s100 5nS3fPESLK>7T?9]AaiQo1
+ILbG9@hY]7@Pc5MJn3[c<o2
+Z442 VBbK405QHd<iWz6FSdQe`I2
 R17
-R190
 R191
 R192
-Z444 L0 116
+R193
+Z443 L0 118
 R2
 r1
+!s85 0
 31
-R194
 R195
 R196
-R12
-!i10b 1
-Z445 !s100 Y9EV?IUXoD>;Cz637dGk`3
-!s85 0
+R197
 !s101 -O0
+R12
 vMF_cycloneiii_pll
-Z446 V8SACR3<jj>]mCQFb;Fhcz1
+Z444 V8SACR3<jj>]mCQFb;Fhcz1
 R2
 r1
 31
-Z447 I6`XdBccfSd]:_QVilJFjH0
+Z445 I6`XdBccfSd]:_QVilJFjH0
 R4
 R5
 R6
 R7
-Z448 L0 14528
+Z446 L0 14528
 R9
 R10
 R11
 R12
-Z449 n@m@f_cycloneiii_pll
-Z450 !s100 UC6bGzJ8l2Ai2@iaBSKAD0
+Z447 n@m@f_cycloneiii_pll
+Z448 !s100 UC6bGzJ8l2Ai2@iaBSKAD0
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_cycloneiiigl_m_cntr
-Z451 V3m_Jz6C;W8>1i>E5DR]XP2
+Z449 V3m_Jz6C;W8>1i>E5DR]XP2
 R2
 r1
 31
-Z452 IeE29QBCMKcVC1]HiL;H6]3
+Z450 IeE29QBCMKcVC1]HiL;H6]3
 R4
 R5
 R6
 R7
-Z453 L0 17857
+Z451 L0 17857
 R9
 R10
 R11
 R12
-Z454 n@m@f_cycloneiiigl_m_cntr
-Z455 !s100 76^PeKczRDAJmFGz5F]GS2
+Z452 n@m@f_cycloneiiigl_m_cntr
+Z453 !s100 76^PeKczRDAJmFGz5F]GS2
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_cycloneiiigl_n_cntr
-Z456 VfUZ<Z;akRGDNQkBMOhdC51
+Z454 VfUZ<Z;akRGDNQkBMOhdC51
 R2
 r1
 31
-Z457 I]:YCcO_DE6_Rae8fUa_Ef1
+Z455 I]:YCcO_DE6_Rae8fUa_Ef1
 R4
 R5
 R6
 R7
-Z458 L0 17938
+Z456 L0 17938
 R9
 R10
 R11
 R12
-Z459 n@m@f_cycloneiiigl_n_cntr
-Z460 !s100 Z2?S_?ao_DN=CCYXkQEK42
+Z457 n@m@f_cycloneiiigl_n_cntr
+Z458 !s100 Z2?S_?ao_DN=CCYXkQEK42
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_cycloneiiigl_pll
-Z461 VX:XbK@6<Z8TFo`ZiKA`8b3
+Z459 VX:XbK@6<Z8TFo`ZiKA`8b3
 R2
 r1
 31
-Z462 IPFb3AK=3XbgClNjh@5d3h0
+Z460 IPFb3AK=3XbgClNjh@5d3h0
 R4
 R5
 R6
 R7
-Z463 L0 18208
+Z461 L0 18208
 R9
 R10
 R11
 R12
-Z464 n@m@f_cycloneiiigl_pll
-Z465 !s100 W<c:3<JlFZzQ:?;o_2dY40
+Z462 n@m@f_cycloneiiigl_pll
+Z463 !s100 W<c:3<JlFZzQ:?;o_2dY40
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_cycloneiiigl_scale_cntr
-Z466 V9Q2fNP0aT7@gU`>cZ`B^[1
+Z464 V9Q2fNP0aT7@gU`>cZ`B^[1
 R2
 r1
 31
-Z467 IVfXK0QnckdI`TL0l<`oTn1
+Z465 IVfXK0QnckdI`TL0l<`oTn1
 R4
 R5
 R6
 R7
-Z468 L0 18009
+Z466 L0 18009
 R9
 R10
 R11
 R12
-Z469 n@m@f_cycloneiiigl_scale_cntr
-Z470 !s100 dIF>GlD?QlHEG=DE5@]zN2
+Z467 n@m@f_cycloneiiigl_scale_cntr
+Z468 !s100 dIF>GlD?QlHEG=DE5@]zN2
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_pll_reg
-Z471 VNCKUEDQ^OBUgncngA<V;H2
+Z469 VNCKUEDQ^OBUgncngA<V;H2
 R2
 r1
 31
-Z472 IOaj7a2gdgS1?Nzg_nd1>d1
+Z470 IOaj7a2gdgS1?Nzg_nd1>d1
 R4
 R5
 R6
 R7
-Z473 L0 2445
+Z471 L0 2445
 R9
 R10
 R11
 R12
-Z474 n@m@f_pll_reg
-Z475 !s100 gMNh0zbfJi[C_Ve`272Z=0
+Z472 n@m@f_pll_reg
+Z473 !s100 gMNh0zbfJi[C_Ve`272Z=0
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_stratix_pll
-Z476 V<Q6_>0?hlOYD6Z>E5^II12
+Z474 V<Q6_>0?hlOYD6Z>E5^II12
 R2
 r1
 31
-Z477 I1FU1<^dJi3JdhA1?TP]Bh1
+Z475 I1FU1<^dJi3JdhA1?TP]Bh1
 R4
 R5
 R6
 R7
-Z478 L0 2504
+Z476 L0 2504
 R9
 R10
 R11
 R12
-Z479 n@m@f_stratix_pll
-Z480 !s100 Jgm0n;cFHofaoIDA=K@l30
+Z477 n@m@f_stratix_pll
+Z478 !s100 Jgm0n;cFHofaoIDA=K@l30
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_stratixii_pll
-Z481 V]ZTC;GJ]^ZXMZmG8?R3E32
+Z479 V]ZTC;GJ]^ZXMZmG8?R3E32
 R2
 r1
 31
-Z482 I2iiBGfJESHh10`hGoj>2c1
+Z480 I2iiBGfJESHh10`hGoj>2c1
 R4
 R5
 R6
 R7
-Z483 L0 6595
+Z481 L0 6595
 R9
 R10
 R11
 R12
-Z484 n@m@f_stratixii_pll
-Z485 !s100 60O:nzkfPkBQz7Wg`S<ER0
+Z482 n@m@f_stratixii_pll
+Z483 !s100 60O:nzkfPkBQz7Wg`S<ER0
 !i10b 1
 !s85 0
 !s101 -O0
 vMF_stratixiii_pll
-Z486 VPJ`;F;KLMG`Rme6?O:>0a3
+Z484 VPJ`;F;KLMG`Rme6?O:>0a3
 R2
 r1
 31
-Z487 IX`9@9QV]nEDD^_8[UU[0g2
+Z485 IX`9@9QV]nEDD^_8[UU[0g2
 R4
 R5
 R6
 R7
-Z488 L0 10426
+Z486 L0 10426
 R9
 R10
 R11
 R12
-Z489 n@m@f_stratixiii_pll
-Z490 !s100 ZYj?i01o?R3d^bjMaElg^0
+Z487 n@m@f_stratixiii_pll
+Z488 !s100 ZYj?i01o?R3d^bjMaElg^0
 !i10b 1
 !s85 0
 !s101 -O0
 vmips
-Z491 !s100 IlQ;W>`d;UYjoIIK9<PbW3
-Z492 IYL3T15GKC>0C1GUY1EALZ0
-Z493 VPW[Ak9MzbjZ_[1j_DcWOj3
+!i10b 1
+Z489 !s100 IlQ;W>`d;UYjoIIK9<PbW3
+Z490 IYL3T15GKC>0C1GUY1EALZ0
+Z491 VPW[Ak9MzbjZ_[1j_DcWOj3
 R17
-R190
 R191
 R192
+R193
 L0 11
 R2
 r1
+!s85 0
 31
-R194
 R195
 R196
-R12
-!i10b 1
-!s85 0
+R197
 !s101 -O0
+R12
 vMIPS_System
-Z494 VFO?6l3;=3I;;k7]a^0]g42
+Z492 VFO?6l3;=3I;;k7]a^0]g42
 r1
 31
-Z495 IO]1m^[UNMjU?`AW^zT?432
-Z496 dC:\MIPS_design\MIPS_design\MIPS_System_Sim
-Z497 w1410254162
-Z498 8C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v
-Z499 FC:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v
+Z493 IO]1m^[UNMjU?`AW^zT?432
+Z494 dC:\MIPS_design\MIPS_design\MIPS_System_Sim
+Z495 w1410254162
+Z496 8C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v
+Z497 FC:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v
 L0 21
 R2
 R12
-Z500 n@m@i@p@s_@system
-Z501 !s100 V[0KaIaBz7nM70iGY`@^o2
-Z502 !s108 1430127378.692000
-Z503 !s107 C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v|
-Z504 !s90 -reportprogress|300|-work|work|C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v|
+Z498 n@m@i@p@s_@system
+Z499 !s100 V[0KaIaBz7nM70iGY`@^o2
+Z500 !s108 1430127378.692000
+Z501 !s107 C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v|
+Z502 !s90 -reportprogress|300|-work|work|C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vMIPS_System_tb
-Z505 Vljk2Fc88iKDY;?zMM8n=<0
+Z503 Vljk2Fc88iKDY;?zMM8n=<0
 r1
 31
-Z506 Ilm?MRXUWT@ZUoj`4FFJ2^1
-R496
-Z507 w1410254504
-Z508 8C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v
-Z509 FC:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v
+Z504 Ilm?MRXUWT@ZUoj`4FFJ2^1
+R494
+Z505 w1410254504
+Z506 8C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v
+Z507 FC:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v
 L0 3
 R2
 R12
-Z510 n@m@i@p@s_@system_tb
-Z511 !s100 ULTo:So;SE>A]8oIDVA7Q3
-Z512 !s108 1430127378.754000
-Z513 !s107 C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v|
-Z514 !s90 -reportprogress|300|-work|work|C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v|
+Z508 n@m@i@p@s_@system_tb
+Z509 !s100 ULTo:So;SE>A]8oIDVA7Q3
+Z510 !s108 1430127378.754000
+Z511 !s107 C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v|
+Z512 !s90 -reportprogress|300|-work|work|C:/MIPS_design/MIPS_design/MIPS_System/MIPS_System_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vmux2
-!i10b 1
-Z515 !s100 [S]DRCEoM_@aKMiHL^LfH2
-Z516 Ieo;iMF?f7d:fG;U^G;_=g2
-Z517 VT8RWJBjAIeM]>7U=5kBkT1
+Z513 !s100 [S]DRCEoM_@aKMiHL^LfH2
+Z514 Ieo;iMF?f7d:fG;U^G;_=g2
+Z515 VT8RWJBjAIeM]>7U=5kBkT1
 R17
 R18
 R19
 R20
-Z518 L0 301
+Z516 L0 301
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vparallel_add
-Z519 VbbDK2gmh@AWdUES[Zi3TN0
+Z517 VbbDK2gmh@AWdUES[Zi3TN0
 R2
 r1
 31
-Z520 I]gS^>=n<al=NE5IKOP:@<1
+Z518 I]gS^>=n<al=NE5IKOP:@<1
 R4
 R5
 R6
 R7
-Z521 L0 47737
+Z519 L0 47737
 R9
 R10
 R11
 R12
-Z522 !s100 l5J]CLIB7NHUG7[7GG1L60
+Z520 !s100 l5J]CLIB7NHUG7[7GG1L60
 !i10b 1
 !s85 0
 !s101 -O0
 vpll_iobuf
-Z523 VEGl7X@h1ghgJczPPMaRcj3
+Z521 VEGl7X@h1ghgJczPPMaRcj3
 R2
 r1
 31
-Z524 InLHS6`Z0;[8RmLSZ`ADVk0
+Z522 InLHS6`Z0;[8RmLSZ`ADVk0
 R4
 R5
 R6
 R7
-Z525 L0 2121
+Z523 L0 2121
 R9
 R10
 R11
 R12
-Z526 !s100 6nWVM<A>aoZ;2?mlZ`9^d1
+Z524 !s100 6nWVM<A>aoZ;2?mlZ`9^d1
 !i10b 1
 !s85 0
 !s101 -O0
 vpulse_gen
-Z527 Vzj7fbHTOAPGHl]4LN::<01
+Z525 Vzj7fbHTOAPGHl]4LN::<01
 R2
 r1
 31
-Z528 ISbYQPT<Y96OK0QQG=>>B_0
+Z526 ISbYQPT<Y96OK0QQG=>>B_0
 R27
 R287
 R288
 R289
-Z529 L0 187
+Z527 L0 187
 R290
 R291
 R292
 R12
-Z530 !s100 @fT629OcQ79GQBWQVQAa23
+Z528 !s100 @fT629OcQ79GQBWQVQAa23
 !i10b 1
 !s85 0
 !s101 -O0
 vram2port_inst_data
-Z531 V@nS`@J9bDPP4cX22C`O`Z2
+Z529 V@nS`@J9bDPP4cX22C`O`Z2
 R2
 r1
 31
-Z532 Ije[?5h09_zS^?[jbgRfd;2
+Z530 Ije[?5h09_zS^?[jbgRfd;2
 R27
-Z533 w1410149884
-Z534 8C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v
-Z535 FC:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v
+Z531 w1410149884
+Z532 8C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v
+Z533 FC:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v
 L0 39
 R12
-Z536 !s100 Jg2U2[98NPYhlgF8RMGV=2
-Z537 !s108 1410257752.411000
-Z538 !s107 C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v|
-Z539 !s90 -reportprogress|300|-work|work|C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v|
+Z534 !s100 Jg2U2[98NPYhlgF8RMGV=2
+Z535 !s108 1410257752.411000
+Z536 !s107 C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v|
+Z537 !s90 -reportprogress|300|-work|work|C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Altera_Mem_Dual_Port/ram2port_inst_data.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vregfile
-!i10b 1
-Z540 !s100 m[1Z1YjZ^Ak^9=anUOGbe2
-Z541 IYkTB0bIZ8n<@K:[>YO7gB0
-Z542 VoEfJZgI?@czGGfSOSdz_g3
+Z538 !s100 m[1Z1YjZ^Ak^9=anUOGbe2
+Z539 IYkTB0bIZ8n<@K:[>YO7gB0
+Z540 VoEfJZgI?@czGGfSOSdz_g3
 R17
 R18
 R19
@@ -2239,467 +2238,468 @@ R20
 L0 13
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vscfifo
-Z543 VUMV6g0FCa0N3lFO1VmUAB1
+Z541 VUMV6g0FCa0N3lFO1VmUAB1
 R2
 r1
 31
-Z544 I@ck?O@WY5HJNJoc7m^CRa0
+Z542 I@ck?O@WY5HJNJoc7m^CRa0
 R4
 R5
 R6
 R7
-Z545 L0 47906
+Z543 L0 47906
 R9
 R10
 R11
 R12
-Z546 !s100 ]UR7U2k5JdEQgD]dMgNRL2
+Z544 !s100 ]UR7U2k5JdEQgD]dMgNRL2
 !i10b 1
 !s85 0
 !s101 -O0
 vshift_left_16
-!i10b 1
-Z547 !s100 n]Lamkc_A2`5176<kX4]N3
-Z548 I;V1<SZX:iDZCQEM>CSoak3
-Z549 V;Rg@l^a_VE_7Odbmd^>212
+Z545 !s100 n]Lamkc_A2`5176<kX4]N3
+Z546 I;V1<SZX:iDZCQEM>CSoak3
+Z547 V;Rg@l^a_VE_7Odbmd^>212
 R17
 R18
 R19
 R20
-Z550 L0 260
+Z548 L0 260
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vsign_zero_ext
-!i10b 1
-Z551 !s100 4h0Q5JfKKiL3DM:EJkI3;1
-Z552 IVFlnki69bG3PAQ[SlKRGk1
-Z553 V>>JeOTJFFWY8K9NY8L=991
+Z549 !s100 4h0Q5JfKKiL3DM:EJkI3;1
+Z550 IVFlnki69bG3PAQ[SlKRGk1
+Z551 V>>JeOTJFFWY8K9NY8L=991
 R17
 R18
 R19
 R20
-Z554 L0 246
+Z552 L0 246
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vsignal_gen
-Z555 VlANQ]2:@NW327hR21XHd@3
+Z553 VlANQ]2:@NW327hR21XHd@3
 R2
 r1
 31
-Z556 IQAFkVfT]NL_cj6M`1RzBc2
+Z554 IQAFkVfT]NL_cj6M`1RzBc2
 R4
 R5
 R6
 R7
-Z557 L0 50520
+Z555 L0 50520
 R9
 R10
 R11
 R12
-Z558 !s100 @UPOJAkC3NjIOiCZBilb^1
+Z556 !s100 @UPOJAkC3NjIOiCZBilb^1
 !i10b 1
 !s85 0
 !s101 -O0
 vsl2
-!i10b 1
-Z559 !s100 fJigUFo<Ofa^PY9OoN1SW1
-Z560 I>`R[knVIEjL<Y>XhZ2_7B1
-Z561 VMHGRbO<8oJM:TjGW_j2PX2
+Z557 !s100 fJigUFo<Ofa^PY9OoN1SW1
+Z558 I>`R[knVIEjL<Y>XhZ2_7B1
+Z559 VMHGRbO<8oJM:TjGW_j2PX2
 R17
 R18
 R19
 R20
-Z562 L0 237
+Z560 L0 237
 R2
 r1
-!s85 0
 31
 R22
 R23
 R24
-!s101 -O0
 R12
+!i10b 1
+!s85 0
+!s101 -O0
 vsld_signaltap
-Z563 V_JQk5nE5WD?]hX7An^HMH2
+Z561 V_JQk5nE5WD?]hX7An^HMH2
 R2
 r1
 31
-Z564 I@Z4BCDj918Ea[7<Fb8W]B1
+Z562 I@Z4BCDj918Ea[7<Fb8W]B1
 R4
 R5
 R6
 R7
-Z565 L0 51928
+Z563 L0 51928
 R9
 R10
 R11
 R12
-Z566 !s100 jB=lz]2ajO]5R^ITSkgga1
+Z564 !s100 jB=lz]2ajO]5R^ITSkgga1
 !i10b 1
 !s85 0
 !s101 -O0
 vsld_virtual_jtag
-Z567 Vf2g7oS=5=F3IO@[SB6kgz2
+Z565 Vf2g7oS=5=F3IO@[SB6kgz2
 R2
 r1
 31
-Z568 ICYDY>Qfa`jTchMI4@:R>z1
+Z566 ICYDY>Qfa`jTchMI4@:R>z1
 R4
 R5
 R6
 R7
-Z569 L0 51801
+Z567 L0 51801
 R9
 R10
 R11
 R12
-Z570 !s100 V]5h^SSZFKZ7<TC7fj:]K0
+Z568 !s100 V]5h^SSZFKZ7<TC7fj:]K0
 !i10b 1
 !s85 0
 !s101 -O0
 vsld_virtual_jtag_basic
-Z571 VgN1]76z<g[F9Z_FM;6QOV2
+Z569 VgN1]76z<g[F9Z_FM;6QOV2
 R2
 r1
 31
-Z572 ITb?QOXbjQ]GEY`2gN6o=g0
+Z570 ITb?QOXbjQ]GEY`2gN6o=g0
 R4
 R5
 R6
 R7
-Z573 L0 52196
+Z571 L0 52196
 R9
 R10
 R11
 R12
-Z574 !s100 bfT7UgmXCMX_D;LeBLIYj2
+Z572 !s100 bfT7UgmXCMX_D;LeBLIYj2
 !i10b 1
 !s85 0
 !s101 -O0
 vstratix_lvds_rx
-Z575 V39zBWPn2G7n8FGOMRmNJB0
+Z573 V39zBWPn2G7n8FGOMRmNJB0
 R2
 r1
 31
-Z576 IOmc9n5:9C=oWz?iLfOQ5G3
+Z574 IOmc9n5:9C=oWz?iLfOQ5G3
 R4
 R5
 R6
 R7
-Z577 L0 24790
+Z575 L0 24790
 R9
 R10
 R11
 R12
-Z578 !s100 aNDPU5O=S>?NKzYl8RWGE3
+Z576 !s100 aNDPU5O=S>?NKzYl8RWGE3
 !i10b 1
 !s85 0
 !s101 -O0
 vstratix_tx_outclk
-Z579 Vh80DY6<NJ0Bn98@EoCo8n1
+Z577 Vh80DY6<NJ0Bn98@EoCo8n1
 R2
 r1
 31
-Z580 If3ieI4dk39e>MZHDJ40^J1
+Z578 If3ieI4dk39e>MZHDJ40^J1
 R4
 R5
 R6
 R7
-Z581 L0 28636
+Z579 L0 28636
 R9
 R10
 R11
 R12
-Z582 !s100 c0V=THD;HF^B4JBlXzNH@0
+Z580 !s100 c0V=THD;HF^B4JBlXzNH@0
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixgx_dpa_lvds_rx
-Z583 V`[XhBYMJchCjeXnWloPH;3
+Z581 V`[XhBYMJchCjeXnWloPH;3
 R2
 r1
 31
-Z584 INcXQ5[7PobfoFF4din>h;1
+Z582 INcXQ5[7PobfoFF4din>h;1
 R4
 R5
 R6
 R7
-Z585 L0 24898
+Z583 L0 24898
 R9
 R10
 R11
 R12
-Z586 !s100 V=NK7l:JoJ]gEYQlXClzN0
+Z584 !s100 V=NK7l:JoJ]gEYQlXClzN0
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixii_lvds_rx
-Z587 V5D>4DFSRXh3=Nm=hc48Kd2
+Z585 V5D>4DFSRXh3=Nm=hc48Kd2
 R2
 r1
 31
-Z588 IS9CQijRXn`Z2Ao9;5L^Ai0
+Z586 IS9CQijRXn`Z2Ao9;5L^Ai0
 R4
 R5
 R6
 R7
-Z589 L0 25301
+Z587 L0 25301
 R9
 R10
 R11
 R12
-Z590 !s100 WoT[JU4Ei`U3?=hjNzMh`3
+Z588 !s100 WoT[JU4Ei`U3?=hjNzMh`3
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixii_tx_outclk
-Z591 V=n_<[`Vzf2Rz<[OlZ?^mI1
+Z589 V=n_<[`Vzf2Rz<[OlZ?^mI1
 R2
 r1
 31
-Z592 IV;FTz9^?Tgc;]^V78a?9O1
+Z590 IV;FTz9^?Tgc;]^V78a?9O1
 R4
 R5
 R6
 R7
-Z593 L0 28744
+Z591 L0 28744
 R9
 R10
 R11
 R12
-Z594 !s100 DJEajLY@I8ND<FFbVbEF[2
+Z592 !s100 DJEajLY@I8ND<FFbVbEF[2
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixiii_lvds_rx
-Z595 VoUk;[:B=^AmQb8<2mQYcL3
+Z593 VoUk;[:B=^AmQb8<2mQYcL3
 R2
 r1
 31
-Z596 IK`1f?D_9U<i?X3z8XiiP?3
+Z594 IK`1f?D_9U<i?X3z8XiiP?3
 R4
 R5
 R6
 R7
-Z597 L0 26087
+Z595 L0 26087
 R9
 R10
 R11
 R12
-Z598 !s100 =g6mJ?k>Q]7>C5T;4:zDO1
+Z596 !s100 =g6mJ?k>Q]7>C5T;4:zDO1
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixiii_lvds_rx_channel
-Z599 V6g9^E94B=2R;m4N=Eh2zm1
+Z597 V6g9^E94B=2R;m4N=Eh2zm1
 R2
 r1
 31
-Z600 ISUW8jkgViEMjzTaW9UaV51
+Z598 ISUW8jkgViEMjzTaW9UaV51
 R4
 R5
 R6
 R7
-Z601 L0 26269
+Z599 L0 26269
 R9
 R10
 R11
 R12
-Z602 !s100 Pi?KFf4beX_L[XYKWi5Ej0
+Z600 !s100 Pi?KFf4beX_L[XYKWi5Ej0
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixiii_lvds_rx_dpa
-Z603 VenIPQShS6??nhY:JSTm8<3
+Z601 VenIPQShS6??nhY:JSTm8<3
 R2
 r1
 31
-Z604 IGzD3ON?3eGDGmK?Ji3Mz>2
+Z602 IGzD3ON?3eGDGmK?Ji3Mz>2
 R4
 R5
 R6
 R7
-Z605 L0 26878
+Z603 L0 26878
 R9
 R10
 R11
 R12
-Z606 !s100 5zd@JF9LKLbf6_gSe=[`;3
+Z604 !s100 5zd@JF9LKLbf6_gSe=[`;3
 !i10b 1
 !s85 0
 !s101 -O0
 vstratixv_local_clk_divider
-Z607 V9QKP]A2;J<z_KOj[g[gGS3
+Z605 V9QKP]A2;J<z_KOj[g[gGS3
 R2
 r1
 31
-Z608 I8TFF<N1?:RgDBfjB;kd9E1
+Z606 I8TFF<N1?:RgDBfjB;kd9E1
 R4
 R5
 R6
 R7
-Z609 L0 28542
+Z607 L0 28542
 R9
 R10
 R11
 R12
-Z610 !s100 z8bo:NW]6@N_iWmgToN@C3
+Z608 !s100 z8bo:NW]6@N_iWmgToN@C3
 !i10b 1
 !s85 0
 !s101 -O0
 vstx_m_cntr
-Z611 V:[2:D[_10ghn[bgc=CD302
+Z609 V:[2:D[_10ghn[bgc=CD302
 R2
 r1
 31
-Z612 IIL;fUOaE5_POJiP6L5>_C1
+Z610 IIL;fUOaE5_POJiP6L5>_C1
 R4
 R5
 R6
 R7
-Z613 L0 2147
+Z611 L0 2147
 R9
 R10
 R11
 R12
-Z614 !s100 ^NC:V^GZ=SESSFe^`z<E91
+Z612 !s100 ^NC:V^GZ=SESSFe^`z<E91
 !i10b 1
 !s85 0
 !s101 -O0
 vstx_n_cntr
-Z615 V4CiQB5Uz?;=OULO:MD>Eo1
+Z613 V4CiQB5Uz?;=OULO:MD>Eo1
 R2
 r1
 31
-Z616 IFUQ@Y0[PGL4DJcdH:@i0[2
+Z614 IFUQ@Y0[PGL4DJcdH:@i0[2
 R4
 R5
 R6
 R7
-Z617 L0 2225
+Z615 L0 2225
 R9
 R10
 R11
 R12
-Z618 !s100 ;LTZ6cRZ28XI27;3HiL7L3
+Z616 !s100 ;LTZ6cRZ28XI27;3HiL7L3
 !i10b 1
 !s85 0
 !s101 -O0
 vstx_scale_cntr
-Z619 VG8KIUm2mDHoX1DjR8TDdJ1
+Z617 VG8KIUm2mDHoX1DjR8TDdJ1
 R2
 r1
 31
-Z620 IOa6:j2f2oW81>^]Z`h3XO0
+Z618 IOa6:j2f2oW81>^]Z`h3XO0
 R4
 R5
 R6
 R7
-Z621 L0 2310
+Z619 L0 2310
 R9
 R10
 R11
 R12
-Z622 !s100 ZJ;?2Fe>7RLERZm`Qo>ok2
+Z620 !s100 ZJ;?2Fe>7RLERZm`Qo>ok2
 !i10b 1
 !s85 0
 !s101 -O0
 vTimerCounter
-Z623 V?6SiADLzC[nVUWOhUg7E;3
+Z621 V?6SiADLzC[nVUWOhUg7E;3
 R2
 r1
 31
-Z624 IG[:QM[FZ:MDn4O_<`n4za1
+Z622 IG[:QM[FZ:MDn4O_<`n4za1
 R27
-Z625 w1283850562
-Z626 8C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v
-Z627 FC:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v
+Z623 w1283850562
+Z624 8C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v
+Z625 FC:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v
 L0 3
 R12
-Z628 n@timer@counter
-Z629 !s100 9K[2oC<>mTm0mKG]ALD3S2
-Z630 !s108 1410255879.528000
-Z631 !s107 C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v|
-Z632 !s90 -reportprogress|300|-work|work|C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v|
+Z626 n@timer@counter
+Z627 !s100 9K[2oC<>mTm0mKG]ALD3S2
+Z628 !s108 1410255879.528000
+Z629 !s107 C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v|
+Z630 !s90 -reportprogress|300|-work|work|C:/Users/sunhee/Desktop/ESCA_Ta/comparch/term/MIPS_design/MIPS_System/Timer/TimerCounter.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vttn_m_cntr
-Z633 ViEB@`bJmQ[jz8=2kGYhDn3
+Z631 ViEB@`bJmQ[jz8=2kGYhDn3
 R2
 r1
 31
-Z634 I^ena7?USMoDbF=g=^OI]h0
+Z632 I^ena7?USMoDbF=g=^OI]h0
 R4
 R5
 R6
 R7
-Z635 L0 10147
+Z633 L0 10147
 R9
 R10
 R11
 R12
-Z636 !s100 K@]h575Nk_V0e<fln2YHX2
+Z634 !s100 K@]h575Nk_V0e<fln2YHX2
 !i10b 1
 !s85 0
 !s101 -O0
 vttn_n_cntr
-Z637 VWh8a]<5HCnf>2<AJGoZ2`0
+Z635 VWh8a]<5HCnf>2<AJGoZ2`0
 R2
 r1
 31
-Z638 IH_nPJ[I<CZ5gg2cPZa6N40
+Z636 IH_nPJ[I<CZ5gg2cPZa6N40
 R4
 R5
 R6
 R7
-Z639 L0 10228
+Z637 L0 10228
 R9
 R10
 R11
 R12
-Z640 !s100 @6=h2W089^jVf=cO8Y8T?0
+Z638 !s100 @6=h2W089^jVf=cO8Y8T?0
 !i10b 1
 !s85 0
 !s101 -O0
 vttn_scale_cntr
-Z641 VXPfdhMTXDmY9JYEiBjd?Q2
+Z639 VXPfdhMTXDmY9JYEiBjd?Q2
 R2
 r1
 31
-Z642 IK2CjgVBd]d:GN==><:Cn`1
+Z640 IK2CjgVBd]d:GN==><:Cn`1
 R4
 R5
 R6
 R7
-Z643 L0 10299
+Z641 L0 10299
 R9
 R10
 R11
 R12
-Z644 !s100 @@dH_DQ;6@h6fVGhF?Cf@0
+Z642 !s100 @@dH_DQ;6@h6fVGhF?Cf@0
 !i10b 1
 !s85 0
 !s101 -O0

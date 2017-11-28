@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Nov 14 22:25:53 2017
+Fitter Status : Successful - Tue Nov 28 19:50:17 2017
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : MIPS_System
 Top-level Entity Name : MIPS_System
 Family : Cyclone III
 Device : EP3C16F484C6
 Timing Models : Final
-Total logic elements : 2,580 / 15,408 ( 17 % )
-    Total combinational functions : 2,177 / 15,408 ( 14 % )
+Total logic elements : 2,563 / 15,408 ( 17 % )
+    Total combinational functions : 2,198 / 15,408 ( 14 % )
     Dedicated logic registers : 1,320 / 15,408 ( 9 % )
 Total registers : 1320
 Total pins : 52 / 347 ( 15 % )

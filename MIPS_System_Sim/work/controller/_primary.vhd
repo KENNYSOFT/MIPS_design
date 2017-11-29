@@ -7,7 +7,7 @@ entity controller is
         op              : in     vl_logic_vector(5 downto 0);
         funct           : in     vl_logic_vector(5 downto 0);
         zero            : in     vl_logic;
-        hazard          : in     vl_logic;
+        hazard          : in     vl_logic_vector(1 downto 0);
         signext         : out    vl_logic;
         shiftl16        : out    vl_logic;
         memtoreg        : out    vl_logic;

@@ -7,6 +7,9 @@ entity hazarddetection is
         ID_rs           : in     vl_logic_vector(4 downto 0);
         ID_rt           : in     vl_logic_vector(4 downto 0);
         EX_rt           : in     vl_logic_vector(4 downto 0);
-        hazard          : out    vl_logic
+        pcsrc           : in     vl_logic;
+        regtopc         : in     vl_logic;
+        jump            : in     vl_logic;
+        hazard          : out    vl_logic_vector(1 downto 0)
     );
 end hazarddetection;

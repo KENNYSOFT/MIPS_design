@@ -17,7 +17,7 @@ entity datapath is
         alucontrol      : in     vl_logic_vector(3 downto 0);
         fwda            : in     vl_logic_vector(2 downto 0);
         fwdb            : in     vl_logic_vector(2 downto 0);
-        hazard          : in     vl_logic;
+        hazard          : in     vl_logic_vector(1 downto 0);
         zero            : out    vl_logic;
         pc              : out    vl_logic_vector(31 downto 0);
         instr           : in     vl_logic_vector(31 downto 0);

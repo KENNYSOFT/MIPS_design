@@ -28,7 +28,7 @@ module mips(input         clk, reset,
   wire        MEM_regwrite, WB_regwrite, EX_memread;
   wire [4:0]  ID_rs, ID_rt, EX_rs, EX_rt, MEM_writereg, WB_writereg;
   wire [2:0]  fwda, fwdb;
-  wire        hazard;
+  wire [1:0]  hazard;
 // ###### Hyeonmin Park: End ######
 
   // Instantiate Controller
@@ -121,6 +121,9 @@ module mips(input         clk, reset,
     .ID_rs      (ID_rs),
     .ID_rt      (ID_rt),
     .EX_rt      (EX_rt),
+    .pcsrc      (pcsrc),
+    .regtopc    (regtopc),
+    .jump       (jump),
     .hazard     (hazard));
 // ###### Hyeonmin Park: End ######
 
@@ -133,7 +136,7 @@ module controller(input        clk,
 // ###### Hyeonmin Park: End ######
                   input        zero,
 // ###### Hyeonmin Park: Start ######
-                  input        hazard,
+                  input  [1:0] hazard,
 // ###### Hyeonmin Park: End ######
                   output       signext,
                   output       shiftl16,
@@ -160,32 +163,35 @@ module controller(input        clk,
   wire        ID_alusrc;
   wire        ID_branch;
   wire        ID_branchn;
+  wire        ID_regtopc;
+  wire        ID_jump;
   wire        ID_memread;
   wire        ID_memwrite;
   wire        ID_memtoreg;
   wire        ID_pctoreg;
   wire        ID_regwrite;
-  wire [10:0] ID_Control;
-  wire [10:0] ID_Control2;
+  wire [12:0] ID_Control;
+  wire [12:0] ID_Control2;
   wire        EX_regdst;
   wire [1:0]  EX_aluop;
   wire        EX_alusrc;
-  wire [3:0]  EX_MEM;
+  wire        EX_branch;
+  wire        EX_branchn;
+  wire        EX_regtopc;
+  wire        EX_jump;
+  wire [1:0]  EX_MEM;
   wire [2:0]  EX_WB;
   wire [5:0]  EX_funct;
-  wire        MEM_branch;
-  wire        MEM_branchn;
   wire        MEM_memread;
   wire        MEM_memwrite;
   wire [2:0]  MEM_WB;
-  wire        MEM_zero;
   wire        WB_memtoreg;
   wire        WB_pctoreg;
 
-  assign ID_Control = {ID_regdst, ID_aluop, ID_alusrc, ID_branch, ID_branchn, ID_memread, ID_memwrite, ID_memtoreg, ID_pctoreg, ID_regwrite};
+  assign ID_Control = {ID_regdst, ID_aluop, ID_alusrc, ID_branch, ID_branchn, ID_regtopc, ID_jump, ID_memread, ID_memwrite, ID_memtoreg, ID_pctoreg, ID_regwrite};
   assign EX_memread = EX_MEM[1];
   assign MEM_regwrite = MEM_WB[0];
-  assign {regdst, aluop, alusrc, memread, memwrite, memtoreg, pctoreg, regwrite} = {EX_regdst, EX_aluop, EX_alusrc, MEM_memread, MEM_memwrite, WB_memtoreg, WB_pctoreg, WB_regwrite};
+  assign {regdst, aluop, alusrc, regtopc, jump, memread, memwrite, memtoreg, pctoreg, regwrite} = {EX_regdst, EX_aluop, EX_alusrc, EX_regtopc, EX_jump, MEM_memread, MEM_memwrite, WB_memtoreg, WB_pctoreg, WB_regwrite};
 // ###### Hyeonmin Park: End ######
 
   maindec md(
@@ -201,9 +207,7 @@ module controller(input        clk,
     .alusrc   (ID_alusrc),
     .regdst   (ID_regdst),
     .regwrite (ID_regwrite),
-// ###### Hyeonmin Park: End ######
-    .jump     (jump),
-// ###### Hyeonmin Park: Start ######
+    .jump     (ID_jump),
     .pctoreg  (ID_pctoreg),
     .aluop    (ID_aluop));
 // ###### Hyeonmin Park: End ######
@@ -216,23 +220,23 @@ module controller(input        clk,
     .alucontrol (alucontrol));
 
 // ###### Hyeonmin Park: Start ######
-  mux2 #(11) hazardmux(
+  mux2 #(13) hazardmux(
     .d0 (ID_Control),
-    .d1 (11'b0),
-    .s  (hazard),
+    .d1 (13'b0),
+    .s  (hazard[0] | hazard[1]),
     .y  (ID_Control2));
 
-  flopr #(17) idex(
+  flopr #(19) idex(
     .clk   (clk),
     .reset (reset),
     .d     ({ID_Control2, funct}),
-    .q     ({EX_regdst, EX_aluop, EX_alusrc, EX_MEM, EX_WB, EX_funct}));
+    .q     ({EX_regdst, EX_aluop, EX_alusrc, EX_branch, EX_branchn, EX_regtopc, EX_jump, EX_MEM, EX_WB, EX_funct}));
 
-  flopr #(8) exmem(
+  flopr #(5) exmem(
     .clk   (clk),
     .reset (reset),
-    .d     ({EX_MEM, EX_WB, zero}),
-    .q     ({MEM_branch, MEM_branchn, MEM_memread, MEM_memwrite, MEM_WB, MEM_zero}));
+    .d     ({EX_MEM, EX_WB}),
+    .q     ({MEM_memread, MEM_memwrite, MEM_WB}));
 
   flopr #(3) memwb(
     .clk   (clk),
@@ -240,8 +244,8 @@ module controller(input        clk,
     .d     ({MEM_WB}),
     .q     ({WB_memtoreg, WB_pctoreg, WB_regwrite}));
 
-  assign pcsrc = (MEM_branch & MEM_zero) | (MEM_branchn & MEM_zero);
-  assign regtopc = (op == 6'b000000 && funct == 6'b001000);
+  assign pcsrc = (EX_branch & zero) | (EX_branchn & ~zero);
+  assign ID_regtopc = (op == 6'b000000) & (funct == 6'b001000);
 // ###### Hyeonmin Park: End ######
 
 endmodule
@@ -298,9 +302,11 @@ module aludec(input      [5:0] funct,
 
   always @(*)
     case(aluop)
+// ###### Hyeonmin Park: Start ######
       2'b00: alucontrol <= #`mydelay 4'b0010;  // add
       2'b01: alucontrol <= #`mydelay 4'b0110;  // sub
       2'b10: alucontrol <= #`mydelay 4'b0001;  // or
+// ###### Hyeonmin Park: End ######
       default: case(funct)          // RTYPE
 // ###### Hyeonmin Park: Start ######
           6'b000100: alucontrol <= #`mydelay 4'b0010; // JR
@@ -329,7 +335,7 @@ module datapath(input         clk, reset,
                 input         pctoreg, regtopc,
                 input  [3:0]  alucontrol,
                 input  [2:0]  fwda, fwdb,
-                input         hazard,
+                input  [1:0]  hazard,
 // ###### Hyeonmin Park: End ######
                 output        zero,
                 output [31:0] pc,
@@ -341,22 +347,14 @@ module datapath(input         clk, reset,
                 output [31:0] aluout, writedata,
                 input  [31:0] readdata);
 
-  wire [4:0]  writereg;
 // ###### Hyeonmin Park: Start ######
-  wire [4:0]  writereg2;
-// ###### Hyeonmin Park: End ######
-  wire [31:0] pcnext, pcnextbr, pcplus4, pcbranch;
-// ###### Hyeonmin Park: Start ######
-  wire [31:0] pcnextjr;
+  wire [4:0]  writereg, writereg2;
+  wire [31:0] pcnext, pcnext2, pcnextbr, pcnextjr, pcplus4, pcbranch;
 // ###### Hyeonmin Park: End ######
   wire [31:0] signimm, signimmsh, shiftedimm;
-  wire [31:0] srca, srcb;
 // ###### Hyeonmin Park: Start ######
-  wire [31:0] srca2, srcb2;
-// ###### Hyeonmin Park: End ######
-  wire [31:0] result;
-// ###### Hyeonmin Park: Start ######
-  wire [31:0] result2;
+  wire [31:0] srca, srca2, srcb, srcb2;
+  wire [31:0] result, result2;
 // ###### Hyeonmin Park: End ######
   wire        shift;
 // ###### Hyeonmin Park: Start ######
@@ -365,16 +363,22 @@ module datapath(input         clk, reset,
   wire [31:0] ID_writedata;
   wire [31:0] ID_shiftedimm;
   wire [4:0]  ID_rd;
+  wire [31:0] EX_instr;
   wire [31:0] EX_srca;
   wire [31:0] EX_writedata;
+  wire [31:0] EX_signimm;
   wire [31:0] EX_shiftedimm;
   wire [31:0] EX_aluout;
+  wire [31:0] EX_pcplus4;
+  wire [31:0] EX_pc;
   wire [4:0]  EX_writereg;
   wire [4:0]  EX_rd;
   wire [31:0] MEM_aluout;
   wire [31:0] MEM_writedata;
+  wire [31:0] MEM_pc;
   wire [31:0] WB_readdata;
   wire [31:0] WB_aluout;
+  wire [31:0] WB_pc;
 
   assign aluout = MEM_aluout;
   assign writedata = MEM_writedata;
@@ -390,9 +394,9 @@ module datapath(input         clk, reset,
     .clk   (clk),
     .reset (reset),
 // ###### Hyeonmin Park: Start ######
-    .en    (~hazard),
+    .en    (~hazard[0]),
+    .d     (pcnext2),
 // ###### Hyeonmin Park: End ######
-    .d     (pcnext),
     .q     (pc));
 
   adder pcadd1(
@@ -403,15 +407,15 @@ module datapath(input         clk, reset,
   sl2 immsh(
 // ###### Hyeonmin Park: Start ######
     .a (EX_signimm),
-    .y (EX_signimmsh));
 // ###### Hyeonmin Park: End ######
+    .y (signimmsh));
 				 
   adder pcadd2(
-    .a (pcplus4),
 // ###### Hyeonmin Park: Start ######
-    .b (EX_signimmsh),
-    .y (EX_pcbranch));
+    .a (EX_pc),
 // ###### Hyeonmin Park: End ######
+    .b (signimmsh),
+    .y (pcbranch));
 
   mux2 #(32) pcbrmux(
     .d0  (pcplus4),
@@ -422,7 +426,7 @@ module datapath(input         clk, reset,
 // ###### Hyeonmin Park: Start ######
   mux2 #(32) pcjrmux(
     .d0  (pcnextbr),
-    .d1  (srca),
+    .d1  (srca2),
     .s   (regtopc),
     .y   (pcnextjr));
 // ###### Hyeonmin Park: End ######
@@ -430,10 +434,18 @@ module datapath(input         clk, reset,
   mux2 #(32) pcmux(
 // ###### Hyeonmin Park: Start ######
     .d0   (pcnextjr),
-    .d1   ({pcplus4[31:28], ID_instr[25:0], 2'b00}),
+    .d1   ({pcplus4[31:28], EX_instr[25:0], 2'b00}),
 // ###### Hyeonmin Park: End ######
     .s    (jump),
     .y    (pcnext));
+
+// ###### Hyeonmin Park: Start ######
+  mux2 #(32) pcmux2(
+    .d0   (pcplus4),
+    .d1   (pcnext),
+    .s    (hazard[1]),
+    .y    (pcnext2));
+// ###### Hyeonmin Park: End ######
 
   // register file logic
   regfile rf(
@@ -477,7 +489,7 @@ module datapath(input         clk, reset,
 // ###### Hyeonmin Park: Start ######
   mux2 #(32) resmux2(
     .d0 (result),
-    .d1 (pcplus4),
+    .d1 (WB_pc),
     .s  (pctoreg),
     .y  (result2));
 // ###### Hyeonmin Park: End ######
@@ -550,27 +562,27 @@ module datapath(input         clk, reset,
   flopenr #(32) ifid(
     .clk   (clk),
     .reset (reset),
-    .en    (~hazard),
-    .d     ({instr}),
+    .en    (~hazard[0]),
+    .d     ({hazard[1] ? 32'b0 : instr}),
     .q     ({ID_instr}));
 
-  flopr #(111) idex(
+  flopr #(239) idex(
     .clk   (clk),
     .reset (reset),
-    .d     ({srca, writedata2, ID_shiftedimm, ID_rs, ID_rt, ID_rd}),
-    .q     ({EX_srca, EX_writedata, EX_shiftedimm, EX_rs, EX_rt, EX_rd}));
+    .d     ({hazard[1] ? 32'b0 : ID_instr, srca, writedata2, signimm, ID_shiftedimm, pcplus4, pc, ID_rs, ID_rt, ID_rd}),
+    .q     ({EX_instr, EX_srca, EX_writedata, EX_signimm, EX_shiftedimm, EX_pcplus4, EX_pc, EX_rs, EX_rt, EX_rd}));
 
-  flopr #(69) exmem(
+  flopr #(101) exmem(
     .clk   (clk),
     .reset (reset),
-    .d     ({EX_aluout, srcb, EX_writereg}),
-    .q     ({MEM_aluout, MEM_writedata, MEM_writereg}));
+    .d     ({EX_aluout, srcb, EX_pc, EX_writereg}),
+    .q     ({MEM_aluout, MEM_writedata, MEM_pc, MEM_writereg}));
 
-  flopr #(69) memwb(
+  flopr #(101) memwb(
     .clk   (clk),
     .reset (reset),
-    .d     ({readdata, MEM_aluout, MEM_writereg}),
-    .q     ({WB_readdata, WB_aluout, WB_writereg}));
+    .d     ({readdata, MEM_aluout, MEM_pc, MEM_writereg}),
+    .q     ({WB_readdata, WB_aluout, WB_pc, WB_writereg}));
 // ###### Hyeonmin Park: End ######
 
 endmodule
@@ -581,14 +593,18 @@ module forwarding(input            MEM_regwrite, WB_regwrite,
                   output reg [2:0] fwda, fwdb);
 
   always @(*) begin
-    if (WB_regwrite & WB_writereg == ID_rs) fwda[2] = 1'b1;
+    if (ID_rs == 0) fwda[2] = 1'b0;
+    else if (WB_regwrite & WB_writereg == ID_rs) fwda[2] = 1'b1;
     else fwda[2] = 1'b0;
-    if (WB_regwrite & WB_writereg == ID_rt) fwdb[2] = 1'b1;
+    if (ID_rt == 0) fwdb[2] = 1'b0;
+    else if (WB_regwrite & WB_writereg == ID_rt) fwdb[2] = 1'b1;
     else fwdb[2] = 1'b0;
-    if (MEM_regwrite & MEM_writereg == EX_rs) fwda[1:0] = 2'b01;
+    if (EX_rs == 0) fwda[1:0] = 2'b00;
+    else if (MEM_regwrite & MEM_writereg == EX_rs) fwda[1:0] = 2'b01;
     else if (WB_regwrite & WB_writereg == EX_rs) fwda[1:0] = 2'b10;
     else fwda[1:0] = 2'b00;
-    if (MEM_regwrite & MEM_writereg == EX_rt) fwdb[1:0] = 2'b01;
+    if (EX_rt == 0) fwdb[1:0] = 2'b00;
+    else if (MEM_regwrite & MEM_writereg == EX_rt) fwdb[1:0] = 2'b01;
     else if (WB_regwrite & WB_writereg == EX_rt) fwdb[1:0] = 2'b10;
     else fwdb[1:0] = 2'b00;
   end
@@ -598,12 +614,15 @@ endmodule
 module hazarddetection(input            reset,
                        input            EX_memread,
                        input      [4:0] ID_rs, ID_rt, EX_rt,
-                       output reg       hazard);
+                       input            pcsrc, regtopc, jump,
+                       output reg [1:0] hazard);
 
   always @(*) begin
-    if (reset) hazard = 0;
-    else if (EX_memread & ((EX_rt == ID_rs) | (EX_rt == ID_rt))) hazard = 1;
-    else hazard = 0;
+    if (reset) hazard = 2'b00;
+    if (EX_memread & ((EX_rt == ID_rs) | (EX_rt == ID_rt))) hazard[0] = 1'b1;
+    else hazard[0] = 1'b0;
+    if (pcsrc | regtopc | jump) hazard[1] = 1'b1;
+    else hazard[1] = 1'b0;
   end
 
 endmodule

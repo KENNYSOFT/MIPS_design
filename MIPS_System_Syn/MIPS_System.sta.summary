@@ -2,48 +2,48 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -7.448
-TNS   : -185.029
-
 Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -5.806
-TNS   : -146.935
+Slack : -8.621
+TNS   : -950.431
+
+Type  : Slow 1200mV 85C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -7.161
+TNS   : -166.290
 
 Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 21.299
+Slack : 21.175
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 41.525
+Slack : 41.250
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -2.271
-TNS   : -26.575
+Slack : -2.004
+TNS   : -34.216
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.180
+Slack : 0.358
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 50.251
+Slack : 50.245
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.452
+Slack : 75.421
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 96.458
+Slack : 96.748
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.609
+Slack : 2.284
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : 0.264
+Slack : 0.010
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
@@ -59,111 +59,111 @@ Slack : 49.746
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.754
+Slack : 49.752
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -6.902
-TNS   : -171.070
-
 Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -5.014
-TNS   : -124.609
+Slack : -7.512
+TNS   : -823.856
+
+Type  : Slow 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -6.528
+TNS   : -153.647
 
 Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 21.674
+Slack : 21.489
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 42.291
+Slack : 42.060
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -1.913
-TNS   : -19.340
+Slack : -1.661
+TNS   : -26.981
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.160
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 50.258
+Slack : 50.247
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.436
+Slack : 75.409
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 96.855
+Slack : 97.109
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.347
+Slack : 2.048
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : 0.291
+Slack : 0.082
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : 9.713
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[1]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 49.741
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.745
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 49.742
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll0|altpll_component|auto_generated|pll1|clk[2]'
 Slack : 49.749
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -4.052
-TNS   : -98.620
-
 Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.981
-TNS   : -74.439
+Slack : -4.906
+TNS   : -540.440
+
+Type  : Fast 1200mV 0C Model Setup 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
+Slack : -3.924
+TNS   : -85.602
 
 Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 22.696
+Slack : 22.645
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 45.071
+Slack : 44.863
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : -1.537
-TNS   : -23.306
+Slack : -1.406
+TNS   : -27.392
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.090
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[2]'
-Slack : 50.109
+Slack : 50.108
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'pll0|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 75.217
+Slack : 75.206
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 97.892
+Slack : 98.054
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'pll0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.497
+Slack : 1.345
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'mips:mips_cpu|controller:c|flopr:idex|q[0]'
-Slack : 0.311
+Slack : 0.177
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'

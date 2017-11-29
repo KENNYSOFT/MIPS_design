@@ -357,8 +357,9 @@ regdst <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 regwrite <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 jump <= controls.DB_MAX_OUTPUT_PORT_TYPE
 pctoreg <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-aluop[0] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
-aluop[1] <= controls.DB_MAX_OUTPUT_PORT_TYPE
+aluop[0] <= WideOr18.DB_MAX_OUTPUT_PORT_TYPE
+aluop[1] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+aluop[2] <= controls.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS_System|mips:mips_cpu|controller:c|aludec:ad
@@ -368,18 +369,22 @@ funct[2] => Decoder0.IN3
 funct[3] => Decoder0.IN2
 funct[4] => Decoder0.IN1
 funct[5] => Decoder0.IN0
-aluop[0] => Decoder1.IN1
-aluop[0] => Mux0.IN5
-aluop[0] => Mux1.IN5
-aluop[0] => Mux2.IN5
-aluop[1] => Decoder1.IN0
-aluop[1] => Mux0.IN4
-aluop[1] => Mux1.IN4
-aluop[1] => Mux2.IN4
-alucontrol[0] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-alucontrol[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-alucontrol[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-alucontrol[3] <= alucontrol.DB_MAX_OUTPUT_PORT_TYPE
+aluop[0] => Mux0.IN10
+aluop[0] => Mux1.IN10
+aluop[0] => Mux2.IN10
+aluop[0] => Mux3.IN10
+aluop[1] => Mux0.IN9
+aluop[1] => Mux1.IN9
+aluop[1] => Mux2.IN9
+aluop[1] => Mux3.IN9
+aluop[2] => Mux0.IN8
+aluop[2] => Mux1.IN8
+aluop[2] => Mux2.IN8
+aluop[2] => Mux3.IN8
+alucontrol[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+alucontrol[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+alucontrol[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+alucontrol[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS_System|mips:mips_cpu|controller:c|mux2:hazardmux
@@ -396,6 +401,7 @@ d0[9] => y.DATAA
 d0[10] => y.DATAA
 d0[11] => y.DATAA
 d0[12] => y.DATAA
+d0[13] => y.DATAA
 d1[0] => y.DATAB
 d1[1] => y.DATAB
 d1[2] => y.DATAB
@@ -409,6 +415,8 @@ d1[9] => y.DATAB
 d1[10] => y.DATAB
 d1[11] => y.DATAB
 d1[12] => y.DATAB
+d1[13] => y.DATAB
+s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
@@ -435,6 +443,7 @@ y[9] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[10] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[11] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[12] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[13] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS_System|mips:mips_cpu|controller:c|flopr:idex
@@ -457,6 +466,7 @@ clk => q[15]~reg0.CLK
 clk => q[16]~reg0.CLK
 clk => q[17]~reg0.CLK
 clk => q[18]~reg0.CLK
+clk => q[19]~reg0.CLK
 reset => q[0]~reg0.ACLR
 reset => q[1]~reg0.ACLR
 reset => q[2]~reg0.ACLR
@@ -476,6 +486,7 @@ reset => q[15]~reg0.ACLR
 reset => q[16]~reg0.ACLR
 reset => q[17]~reg0.ACLR
 reset => q[18]~reg0.ACLR
+reset => q[19]~reg0.ACLR
 d[0] => q[0]~reg0.DATAIN
 d[1] => q[1]~reg0.DATAIN
 d[2] => q[2]~reg0.DATAIN
@@ -495,6 +506,7 @@ d[15] => q[15]~reg0.DATAIN
 d[16] => q[16]~reg0.DATAIN
 d[17] => q[17]~reg0.DATAIN
 d[18] => q[18]~reg0.DATAIN
+d[19] => q[19]~reg0.DATAIN
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -514,6 +526,7 @@ q[15] <= q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[16] <= q[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[17] <= q[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[18] <= q[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[19] <= q[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS_System|mips:mips_cpu|controller:c|flopr:exmem

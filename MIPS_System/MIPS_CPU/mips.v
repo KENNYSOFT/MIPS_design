@@ -154,12 +154,14 @@ module controller(input        clk,
                   output       WB_regwrite);
 // ###### Hyeonmin Park: End ######
 
-  wire [1:0] aluop;
+// ###### Hyeonmin Park: Start ######
+  wire [2:0] aluop;
+// ###### Hyeonmin Park: End ######
   wire       branch;
 // ###### Hyeonmin Park: Start ######
   wire        branchn;
   wire        ID_regdst;
-  wire [1:0]  ID_aluop;
+  wire [2:0]  ID_aluop;
   wire        ID_alusrc;
   wire        ID_branch;
   wire        ID_branchn;
@@ -170,10 +172,10 @@ module controller(input        clk,
   wire        ID_memtoreg;
   wire        ID_pctoreg;
   wire        ID_regwrite;
-  wire [12:0] ID_Control;
-  wire [12:0] ID_Control2;
+  wire [13:0] ID_Control;
+  wire [13:0] ID_Control2;
   wire        EX_regdst;
-  wire [1:0]  EX_aluop;
+  wire [2:0]  EX_aluop;
   wire        EX_alusrc;
   wire        EX_branch;
   wire        EX_branchn;
@@ -220,13 +222,13 @@ module controller(input        clk,
     .alucontrol (alucontrol));
 
 // ###### Hyeonmin Park: Start ######
-  mux2 #(13) hazardmux(
+  mux2 #(14) hazardmux(
     .d0 (ID_Control),
-    .d1 (13'b0),
+    .d1 (14'b0),
     .s  (hazard[0] | hazard[1]),
     .y  (ID_Control2));
 
-  flopr #(19) idex(
+  flopr #(20) idex(
     .clk   (clk),
     .reset (reset),
     .d     ({ID_Control2, funct}),
@@ -262,11 +264,11 @@ module maindec(input  [5:0] op,
                output       jump,
 // ###### Hyeonmin Park: Start ######
                output       pctoreg,
+               output [2:0] aluop);
 // ###### Hyeonmin Park: End ######
-               output [1:0] aluop);
 
 // ###### Hyeonmin Park: Start ######
-  reg [13:0] controls;
+  reg [14:0] controls;
 // ###### Hyeonmin Park: End ######
 
 // ###### Hyeonmin Park: Start ######
@@ -277,35 +279,39 @@ module maindec(input  [5:0] op,
   always @(*)
     case(op)
 // ###### Hyeonmin Park: Start ######
-      6'b000000: controls <= #`mydelay 14'b00110000000011; // Rtype
-      6'b100011: controls <= #`mydelay 14'b10101001010000; // LW
-      6'b101011: controls <= #`mydelay 14'b10001000100000; // SW
-      6'b000100: controls <= #`mydelay 14'b10000100000001; // BEQ
-      6'b000101: controls <= #`mydelay 14'b10000010000001; // BNE
+      6'b000000: controls <= #`mydelay 15'b001100000000111; // Rtype
+      6'b100011: controls <= #`mydelay 15'b101010010100000; // LW
+      6'b101011: controls <= #`mydelay 15'b100010001000000; // SW
+      6'b000100: controls <= #`mydelay 15'b100001000000001; // BEQ
+      6'b000101: controls <= #`mydelay 15'b100000100000001; // BNE
       6'b001000, 
-      6'b001001: controls <= #`mydelay 14'b10101000000000; // ADDI, ADDIU: only difference is exception
-      6'b001101: controls <= #`mydelay 14'b00101000000010; // ORI
-      6'b001111: controls <= #`mydelay 14'b01101000000000; // LUI
-      6'b000010: controls <= #`mydelay 14'b00000000001000; // J
-      6'b000011: controls <= #`mydelay 14'b00100000001100; // JAL
-      default:   controls <= #`mydelay 14'bxxxxxxxxxxxxxx; // ???
+      6'b001001: controls <= #`mydelay 15'b101010000000000; // ADDI, ADDIU: only difference is exception
+      6'b001010: controls <= #`mydelay 15'b101010000000011; // SLTI
+      6'b001011: controls <= #`mydelay 15'b101010000000100; // SLTIU
+      6'b001101: controls <= #`mydelay 15'b001010000000010; // ORI
+      6'b001111: controls <= #`mydelay 15'b011010000000000; // LUI
+      6'b000010: controls <= #`mydelay 15'b000000000010000; // J
+      6'b000011: controls <= #`mydelay 15'b001000000011000; // JAL
+      default:   controls <= #`mydelay 15'bxxxxxxxxxxxxxxx; // ???
 // ###### Hyeonmin Park: End ######
     endcase
 
 endmodule
 
 module aludec(input      [5:0] funct,
-              input      [1:0] aluop,
 // ###### Hyeonmin Park: Start ######
+              input      [2:0] aluop,
               output reg [3:0] alucontrol);
 // ###### Hyeonmin Park: End ######
 
   always @(*)
     case(aluop)
 // ###### Hyeonmin Park: Start ######
-      2'b00: alucontrol <= #`mydelay 4'b0010;  // add
-      2'b01: alucontrol <= #`mydelay 4'b0110;  // sub
-      2'b10: alucontrol <= #`mydelay 4'b0001;  // or
+      3'b000: alucontrol <= #`mydelay 4'b0010;  // add
+      3'b001: alucontrol <= #`mydelay 4'b0110;  // sub
+      3'b010: alucontrol <= #`mydelay 4'b0001;  // or
+      3'b011: alucontrol <= #`mydelay 4'b0111;  // slt
+      3'b100: alucontrol <= #`mydelay 4'b1111;  // sltu
 // ###### Hyeonmin Park: End ######
       default: case(funct)          // RTYPE
 // ###### Hyeonmin Park: Start ######

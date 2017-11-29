@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS_System
-Wed Nov 29 12:56:03 2017
+Wed Nov 29 13:10:13 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -112,15 +112,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 29 12:56:03 2017      ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 29 13:10:13 2017      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; MIPS_System                                ;
 ; Top-level Entity Name              ; MIPS_System                                ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 3,658                                      ;
-;     Total combinational functions  ; 2,500                                      ;
-;     Dedicated logic registers      ; 1,754                                      ;
-; Total registers                    ; 1754                                       ;
+; Total logic elements               ; 3,661                                      ;
+;     Total combinational functions  ; 2,503                                      ;
+;     Dedicated logic registers      ; 1,755                                      ;
+; Total registers                    ; 1755                                       ;
 ; Total pins                         ; 52                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 65,536                                     ;
@@ -271,20 +271,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                           ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,658                                                                                           ;
+; Estimated Total logic elements              ; 3,661                                                                                           ;
 ;                                             ;                                                                                                 ;
-; Total combinational functions               ; 2500                                                                                            ;
+; Total combinational functions               ; 2503                                                                                            ;
 ; Logic element usage by number of LUT inputs ;                                                                                                 ;
-;     -- 4 input functions                    ; 1902                                                                                            ;
-;     -- 3 input functions                    ; 463                                                                                             ;
-;     -- <=2 input functions                  ; 135                                                                                             ;
+;     -- 4 input functions                    ; 1898                                                                                            ;
+;     -- 3 input functions                    ; 468                                                                                             ;
+;     -- <=2 input functions                  ; 137                                                                                             ;
 ;                                             ;                                                                                                 ;
 ; Logic elements by mode                      ;                                                                                                 ;
-;     -- normal mode                          ; 2378                                                                                            ;
+;     -- normal mode                          ; 2381                                                                                            ;
 ;     -- arithmetic mode                      ; 122                                                                                             ;
 ;                                             ;                                                                                                 ;
-; Total registers                             ; 1754                                                                                            ;
-;     -- Dedicated logic registers            ; 1754                                                                                            ;
+; Total registers                             ; 1755                                                                                            ;
+;     -- Dedicated logic registers            ; 1755                                                                                            ;
 ;     -- I/O registers                        ; 0                                                                                               ;
 ;                                             ;                                                                                                 ;
 ; I/O pins                                    ; 52                                                                                              ;
@@ -294,9 +294,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                               ;
 ;                                             ;                                                                                                 ;
 ; Maximum fan-out node                        ; ALTPLL_clkgen:pll0|altpll:altpll_component|ALTPLL_clkgen_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 1788                                                                                            ;
-; Total fan-out                               ; 15438                                                                                           ;
-; Average fan-out                             ; 3.52                                                                                            ;
+; Maximum fan-out                             ; 1789                                                                                            ;
+; Total fan-out                               ; 15444                                                                                           ;
+; Average fan-out                             ; 3.51                                                                                            ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -305,7 +305,7 @@ applicable agreement for further details.
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Library Name ;
 +------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
-; |MIPS_System                                   ; 2500 (31)         ; 1754 (1)     ; 65536       ; 0            ; 0       ; 0         ; 52   ; 0            ; |MIPS_System                                                                                                 ; work         ;
+; |MIPS_System                                   ; 2503 (31)         ; 1755 (1)     ; 65536       ; 0            ; 0       ; 0         ; 52   ; 0            ; |MIPS_System                                                                                                 ; work         ;
 ;    |ALTPLL_clkgen:pll0|                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|ALTPLL_clkgen:pll0                                                                              ; work         ;
 ;       |altpll:altpll_component|                ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|ALTPLL_clkgen:pll0|altpll:altpll_component                                                      ; work         ;
 ;          |ALTPLL_clkgen_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|ALTPLL_clkgen:pll0|altpll:altpll_component|ALTPLL_clkgen_altpll:auto_generated                  ; work         ;
@@ -324,18 +324,18 @@ applicable agreement for further details.
 ;       |pulse_gen:sw8|                          ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|GPIO:uGPIO|pulse_gen:sw8                                                                        ; work         ;
 ;       |pulse_gen:sw9|                          ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|GPIO:uGPIO|pulse_gen:sw9                                                                        ; work         ;
 ;    |TimerCounter:Timer|                        ; 83 (83)           ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|TimerCounter:Timer                                                                              ; work         ;
-;    |mips:mips_cpu|                             ; 2148 (0)          ; 1458 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu                                                                                   ; work         ;
-;       |controller:c|                           ; 40 (2)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c                                                                      ; work         ;
-;          |aludec:ad|                           ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|aludec:ad                                                            ; work         ;
+;    |mips:mips_cpu|                             ; 2151 (0)          ; 1459 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu                                                                                   ; work         ;
+;       |controller:c|                           ; 46 (2)            ; 21 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c                                                                      ; work         ;
+;          |aludec:ad|                           ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|aludec:ad                                                            ; work         ;
 ;          |flopr:exmem|                         ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|flopr:exmem                                                          ; work         ;
-;          |flopr:idex|                          ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|flopr:idex                                                           ; work         ;
+;          |flopr:idex|                          ; 0 (0)             ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|flopr:idex                                                           ; work         ;
 ;          |flopr:memwb|                         ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|flopr:memwb                                                          ; work         ;
-;          |maindec:md|                          ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|maindec:md                                                           ; work         ;
-;          |mux2:hazardmux|                      ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|mux2:hazardmux                                                       ; work         ;
-;       |datapath:dp|                            ; 2068 (58)         ; 1438 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp                                                                       ; work         ;
+;          |maindec:md|                          ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|maindec:md                                                           ; work         ;
+;          |mux2:hazardmux|                      ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|controller:c|mux2:hazardmux                                                       ; work         ;
+;       |datapath:dp|                            ; 2065 (58)         ; 1438 (0)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp                                                                       ; work         ;
 ;          |adder:pcadd1|                        ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|adder:pcadd1                                                          ; work         ;
 ;          |adder:pcadd2|                        ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|adder:pcadd2                                                          ; work         ;
-;          |alu:alu|                             ; 186 (186)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|alu:alu                                                               ; work         ;
+;          |alu:alu|                             ; 181 (181)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|alu:alu                                                               ; work         ;
 ;          |flopenr:ifid|                        ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:ifid                                                          ; work         ;
 ;          |flopenr:pcreg|                       ; 10 (10)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg                                                         ; work         ;
 ;          |flopr:exmem|                         ; 0 (0)             ; 101 (101)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:exmem                                                           ; work         ;
@@ -348,7 +348,7 @@ applicable agreement for further details.
 ;          |mux2:srcbmux|                        ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|mux2:srcbmux                                                          ; work         ;
 ;          |mux2:wrmux|                          ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|mux2:wrmux                                                            ; work         ;
 ;          |mux4:srcamux2|                       ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcamux2                                                         ; work         ;
-;          |mux4:srcbmux2|                       ; 66 (66)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcbmux2                                                         ; work         ;
+;          |mux4:srcbmux2|                       ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcbmux2                                                         ; work         ;
 ;          |regfile:rf|                          ; 48 (48)           ; 992 (992)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|regfile:rf                                                            ; work         ;
 ;          |shift_left_16:sl16|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|shift_left_16:sl16                                                    ; work         ;
 ;          |sign_zero_ext:sze|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPS_System|mips:mips_cpu|datapath:dp|sign_zero_ext:sze                                                     ; work         ;
@@ -838,10 +838,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1754  ;
+; Total registers                              ; 1755  ;
 ; Number of registers using Synchronous Clear  ; 67    ;
 ; Number of registers using Synchronous Load   ; 27    ;
-; Number of registers using Asynchronous Clear ; 466   ;
+; Number of registers using Asynchronous Clear ; 467   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1126  ;
 ; Number of registers using Preset             ; 0     ;
@@ -853,24 +853,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |MIPS_System|TimerCounter:Timer|CompareR[29]               ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|LEDG_R[4]                          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |MIPS_System|TimerCounter:Timer|CompareR[30]               ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|LEDG_R[5]                          ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg|q[28] ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX0_R[4]                          ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX0_R[1]                          ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX1_R[2]                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg|q[0]  ;
-; 5:1                ; 26 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg|q[23] ;
-; 6:1                ; 22 bits   ; 88 LEs        ; 44 LEs               ; 44 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:memwb|q[90]   ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX2_R[2]                          ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:idex|q[163]   ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:idex|q[191]   ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX3_R[3]                          ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:memwb|q[77]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg|q[1]  ;
+; 5:1                ; 26 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopenr:pcreg|q[22] ;
+; 6:1                ; 22 bits   ; 88 LEs        ; 44 LEs               ; 44 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:memwb|q[80]   ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX2_R[3]                          ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:idex|q[143]   ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:idex|q[203]   ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |MIPS_System|GPIO:uGPIO|HEX3_R[4]                          ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:memwb|q[73]   ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |MIPS_System|mips:mips_cpu|datapath:dp|flopr:memwb|q[71]   ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcbmux2|y[17] ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|datapath:dp|mux2:resmux2|y[5]   ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcamux2|y[4]  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|controller:c|aludec:ad|Mux2     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|datapath:dp|mux4:srcamux2|y[13] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |MIPS_System|mips:mips_cpu|controller:c|aludec:ad|Mux2     ;
 ; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; No         ; |MIPS_System|mips:mips_cpu|datapath:dp|alu:alu|Mux11       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 
@@ -1263,7 +1263,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                          ;
 +----------------+-------+---------------------------------------------------------------+
-; WIDTH          ; 13    ; Signed Integer                                                ;
+; WIDTH          ; 14    ; Signed Integer                                                ;
 +----------------+-------+---------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1273,7 +1273,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                      ;
 +----------------+-------+-----------------------------------------------------------+
-; WIDTH          ; 19    ; Signed Integer                                            ;
+; WIDTH          ; 20    ; Signed Integer                                            ;
 +----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2024,7 +2024,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Nov 29 12:55:50 2017
+    Info: Processing started: Wed Nov 29 13:10:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_System -c MIPS_System
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file /users/525hm/desktop/mips_design/mips_system/altera_mem_dual_port/ram2port_inst_data.v
@@ -2135,7 +2135,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/altp
 Info (12128): Elaborating entity "ALTPLL_clkgen_altpll" for hierarchy "ALTPLL_clkgen:pll0|altpll:altpll_component|ALTPLL_clkgen_altpll:auto_generated"
 Info (12128): Elaborating entity "mips" for hierarchy "mips:mips_cpu"
 Info (12128): Elaborating entity "controller" for hierarchy "mips:mips_cpu|controller:c"
-Warning (10036): Verilog HDL or VHDL warning at mips.v(157): object "aluop" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mips.v(158): object "aluop" assigned a value but never read
 Info (12128): Elaborating entity "maindec" for hierarchy "mips:mips_cpu|controller:c|maindec:md"
 Info (12128): Elaborating entity "aludec" for hierarchy "mips:mips_cpu|controller:c|aludec:ad"
 Info (12128): Elaborating entity "mux2" for hierarchy "mips:mips_cpu|controller:c|mux2:hazardmux"
@@ -2227,88 +2227,89 @@ Info (12133): Instantiated megafunction "ram2port_inst_data:Inst_Data_Mem|altsyn
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5ul2.tdf
     Info (12023): Found entity 1: altsyncram_5ul2
 Info (12128): Elaborating entity "altsyncram_5ul2" for hierarchy "ram2port_inst_data:Inst_Data_Mem|altsyncram:altsyncram_component|altsyncram_5ul2:auto_generated"
+Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (512) in the Memory Initialization File "C:/Users/525hm/Desktop/MIPS_design/MIPS_System_Syn/insts_data.mif" -- setting initial value for remaining addresses to 0
 Info (12128): Elaborating entity "Addr_Decoder" for hierarchy "Addr_Decoder:Decoder"
 Info (12128): Elaborating entity "TimerCounter" for hierarchy "TimerCounter:Timer"
 Info (12128): Elaborating entity "GPIO" for hierarchy "GPIO:uGPIO"
 Info (12128): Elaborating entity "pulse_gen" for hierarchy "GPIO:uGPIO|pulse_gen:button1"
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Warning (13012): Latch mips:mips_cpu|datapath:dp|alu:alu|result[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[17]
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mips:mips_cpu|controller:c|flopr:idex|q[18]
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 60 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3857 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3860 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 38 output pins
-    Info (21061): Implemented 3772 logic cells
+    Info (21061): Implemented 3775 logic cells
     Info (21064): Implemented 32 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 70 warnings
     Info: Peak virtual memory: 590 megabytes
-    Info: Processing ended: Wed Nov 29 12:56:03 2017
+    Info: Processing ended: Wed Nov 29 13:10:13 2017
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:13
 
 
